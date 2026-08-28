@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)blob:https://www.kimi.ai/f47d37c3-dd1e-408a-8c35-d6c6939b9cfa -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Gabriel C. de Sena — Médico Clínico Geral</title>
+<meta name="description" content="Site profissional do Dr. Gabriel C. de Sena, Médico Clínico Geral. Atendimento médico, conteúdo de saúde e ferramentas educativas.">
+<style>
+:root{--ink:#13212b;--muted:#66747d;--line:#dfe7e9;--bg:#f8fbff;--card:#fff;--accent:#60a5fa;--accent2:#3b82f6;--accent-light:#eff6ff;--warn:#c9a227;--danger:#b42318}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}header{position:sticky;top:0;background:#ffffffee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:10}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:-.03em;font-size:20px}.brand span{color:var(--accent)}nav{display:flex;gap:24px;font-size:14px;color:#41505a;align-items:center}nav a:hover{color:var(--accent)}.lang-switch{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;color:var(--accent)}.lang-switch:hover{background:var(--accent);color:#fff;border-color:var(--accent)}.btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;border:0;cursor:pointer}.btn:hover{background:var(--accent2)}.btn.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}.btn.small{padding:8px 14px;font-size:13px}.hero{padding:86px 0 70px;background:linear-gradient(135deg,#eff6ff,#fff)}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800;color:var(--accent)}h1{font-size:clamp(42px,6vw,70px);line-height:1.02;letter-spacing:-.055em;margin:14px 0 20px}h2{font-size:34px;letter-spacing:-.04em;margin:0 0 10px}h3{margin:0 0 8px}.lead{font-size:19px;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.profile-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 18px 50px #13212b14}.avatar{width:88px;height:88px;border-radius:50%;background:var(--accent-light);display:grid;place-items:center;color:var(--accent);font-size:30px;font-weight:800;margin-bottom:20px}.badge{display:inline-block;background:var(--accent-light);color:var(--accent);padding:5px 9px;border-radius:999px;font-size:12px;font-weight:800}section{padding:76px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}.section-head p{color:var(--muted);max-width:620px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:25px;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-3px);box-shadow:0 12px 40px #13212b10}.icon{font-size:26px;margin-bottom:14px}.card p{color:var(--muted);font-size:15px}.arrow{color:var(--accent);font-weight:800}.about{background:#fff}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.facts{display:grid;gap:12px}.fact{padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}.cta{background:#1e40af;color:#fff;border-radius:24px;padding:45px}.cta p{color:#dbeafe}.cta .btn{background:#fff;color:var(--accent2)}footer{padding:35px 0;color:#6a777d;font-size:13px;border-top:1px solid var(--line)}.footer-grid{display:flex;justify-content:space-between;gap:20px}.disclaimer{font-size:12px;color:#7a858a;margin-top:25px}@media(max-width:800px){nav{display:none}.hero-grid,.about-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding-top:55px}.section-head{display:block}.footer-grid{flex-direction:column}}
+
+/* Calculadoras */
+.calc-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.calc-card h3{font-size:18px;margin-bottom:14px;color:var(--accent)}
+.calc-card label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:10px 0 4px}
+.calc-card input,.calc-card select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit}
+.calc-card input:focus,.calc-card select:focus{outline:none;border-color:var(--accent)}
+.calc-result{background:var(--accent-light);border-radius:12px;padding:14px;margin-top:14px;font-size:15px}
+.calc-result strong{color:var(--accent);font-size:18px}
+.calc-ref{font-size:11px;color:#8899a0;margin-top:8px}
+.hidden{display:none}
+
+/* Tabs */
+.tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab-btn{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:13px;font-weight:600;color:var(--muted)}
+.tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* Alertas */
+.alert-info{background:#dbeafe;border-left:4px solid var(--accent);padding:12px 16px;border-radius:0 10px 10px 0;font-size:13px;color:var(--ink);margin:14px 0}
+</style>
+<!--<base target="_blank">--><base href="." target="_blank">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="">Dr. Gabriel C. de Sena
+    <nav>
+      <a href="" data-pt="Consultas" data-es="Consultas">Consultas</a>
+      <a href="" data-pt="Conteúdo" data-es="Contenido">Conteúdo</a>
+      <a href="" data-pt="Ferramentas" data-es="Herramientas">Ferramentas</a>
+      <a href="" data-pt="Estudos" data-es="Estudios">Estudos</a>
+      <a href="" data-pt="Contato" data-es="Contacto">Contato</a>
+      <button class="lang-switch" onclick="toggleLang()" id="langBtn">ES</button>
+    </nav>
+    <a class="btn" href="" id="heroBtn" data-pt="Agendar" data-es="Agendar">Agendar</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker" data-pt="Medicina • Informação • Cuidado" data-es="Medicina • Información • Cuidado">Medicina • Informação • Cuidado</div>
+      <h1 data-pt="Medicina baseada em evidências, de forma clara." data-es="Medicina basada en evidencias, de forma clara.">Medicina baseada em evidências, de forma clara.</h1>
+      <p class="lead" data-pt="Atendimento médico e conteúdo de saúde apresentados com linguagem acessível, responsabilidade e foco no que realmente importa." data-es="Atención médica y contenido de salud presentados con lenguaje accesible, responsabilidad y enfoque en lo que realmente importa.">Atendimento médico e conteúdo de saúde apresentados com linguagem acessível, responsabilidade e foco no que realmente importa.</p>
+      <div class="actions">
+        <a class="btn" href="" data-pt="Agendar consulta" data-es="Agendar consulta">Agendar consulta</a>
+        <a class="btn secondary" href="" data-pt="Conhecer o conteúdo" data-es="Conocer el contenido">Conhecer o conteúdo</a>
+      </div>
+    </div>
+    <div class="profile-card">
+      <div class="avatar">GDS</div>
+      <span class="badge" data-pt="MÉDICO CLÍNICO GERAL" data-es="MÉDICO CLÍNICO GENERAL">MÉDICO CLÍNICO GERAL</span>
+      <h3 style="font-size:25px;margin-top:14px">Dr. Gabriel C. de Sena</h3>
+      <p style="color:var(--muted)" data-pt="Brasil / Argentina" data-es="Brasil / Argentina">Brasil / Argentina</p>
+      <p data-pt="Atendimento médico, educação em saúde e ferramentas digitais para facilitar o acesso à informação de qualidade." data-es="Atención médica, educación en salud y herramientas digitales para facilitar el acceso a información de calidad.">Atendimento médico, educação em saúde e ferramentas digitais para facilitar o acesso à informação de qualidade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTAS -->
+<section id="consultas">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker" data-pt="Atendimento" data-es="Atención">Atendimento</div>
+        <h2 data-pt="Consultas" data-es="Consultas">Consultas</h2>
+      </div>
+      <p data-pt="Modalidades de atendimento disponíveis para o cuidado da sua saúde." data-es="Modalidades de atención disponibles para el cuidado de su salud.">Modalidades de atendimento disponíveis para o cuidado da sua saúde.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🩺</div>
+        <h3 data-pt="Consulta médica" data-es="Consulta médica">Consulta médica</h3>
+        <p data-pt="Avaliação clínica completa, acompanhamento e orientações individualizadas para sua saúde." data-es="Evaluación clínica completa, seguimiento y orientaciones individualizadas para su salud.">Avaliação clínica completa, acompanhamento e orientações individualizadas para sua saúde.</p>
+        <span class="arrow" style="opacity:.5" data-pt="Em breve" data-es="Próximamente">Em breve</span>
+      </div>
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3 data-pt="Telemedicina" data-es="Telemedicina">Telemedicina</h3>
+        <p data-pt="Atendimento remoto seguro e eficiente, conforme as normativas aplicáveis de cada país." data-es="Atención remota segura y eficiente, conforme a las normativas aplicables de cada país.">Atendimento remoto seguro e eficiente, conforme as normativas aplicáveis de cada país.</p>
+        <span class="arrow" style="opacity:.5" data-pt="Em breve" data-es="Próximamente">Em breve</span>
+      </div>
+      <div class="card">
+        <div class="icon">📅</div>
+        <h3 data-pt="Agendamento" data-es="Agendamiento">Agendamento</h3>
+        <p data-pt="Entre em contato para verificar disponibilidade e agendar sua consulta." data-es="Contacte para verificar disponibilidad y agendar su consulta.">Entre em contato para verificar disponibilidade e agendar sua consulta.</p>
+        <span class="arrow" style="opacity:.5" data-pt="Em breve" data-es="Próximamente">Em breve</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEÚDO -->
+<section id="conteudo" class="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker" data-pt="Conteúdo" data-es="Contenido">Conteúdo</div>
+        <h2 data-pt="Informação médica" data-es="Información médica">Informação médica</h2>
+      </div>
+      <p data-pt="Artigos, explicações e materiais educativos organizados por tema." data-es="Artículos, explicaciones y materiales educativos organizados por tema.">Artigos, explicações e materiais educativos organizados por tema.</p>
+    </div>
+    <div class="grid">
+      <a href="" class="card" style="display:block">
+        <div class="icon">📖</div>
+        <h3 data-pt="Artigos" data-es="Artículos">Artigos</h3>
+        <p data-pt="Textos sobre saúde, prevenção, sintomas e tratamentos." data-es="Textos sobre salud, prevención, síntomas y tratamientos.">Textos sobre saúde, prevenção, sintomas e tratamentos.</p>
+        <span class="arrow" data-pt="Explorar →" data-es="Explorar →">Explorar →</span>
+      </a>
+      <a href="" class="card" style="display:block">
+        <div class="icon">🎓</div>
+        <h3 data-pt="Área de estudos" data-es="Área de estudios">Área de estudos</h3>
+        <p data-pt="Resumos, protocolos, aulas e materiais para estudantes e profissionais." data-es="Resúmenes, protocolos, clases y materiales para estudantes y profesionales.">Resumos, protocolos, aulas e materiais para estudantes e profissionais.</p>
+        <span class="arrow" data-pt="Acessar →" data-es="Acceder →">Acessar →</span>
+      </a>
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h3 data-pt="Guias rápidos" data-es="Guías rápidas">Guias rápidos</h3>
+        <p data-pt="Conteúdos objetivos para consulta e revisão rápida." data-es="Contenidos objetivos para consulta y revisión rápida.">Conteúdos objetivos para consulta e revisão rápida.</p>
+        <span class="arrow" style="opacity:.5" data-pt="Em breve →" data-es="Próximamente →">Em breve →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FERRAMENTAS / CALCULADORAS -->
+<section id="ferramentas">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker" data-pt="Ferramentas" data-es="Herramientas">Ferramentas</div>
+        <h2 data-pt="Calculadoras médicas" data-es="Calculadoras médicas">Calculadoras médicas</h2>
+      </div>
+      <p data-pt="Ferramentas interativas com referências internacionais. Uso exclusivamente educativo." data-es="Herramientas interactivas con referencias internacionales. Uso exclusivamente educativo.">Ferramentas interativas com referências internacionais. Uso exclusivamente educativo.</p>
+    </div>
+
+    <div class="alert-info" data-pt="⚠️ As calculadoras deste site têm finalidade estritamente educativa e informativa. Não substituem avaliação médica individualizada. Sempre consulte um profissional de saúde." data-es="⚠️ Las calculadoras de este sitio tienen finalidad estrictamente educativa e informativa. No sustituyen evaluación médica individualizada. Siempre consulte a un profesional de salud.">⚠️ As calculadoras deste site têm finalidade estritamente educativa e informativa. Não substituem avaliação médica individualizada. Sempre consulte um profissional de saúde.</div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab(&#39;tab-imc&#39;)" data-pt="IMC" data-es="IMC">IMC</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-sc&#39;)" data-pt="Superfície Corporal" data-es="Superficie Corporal">Superfície Corporal</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-tfg&#39;)" data-pt="TFG (CKD-EPI 2021)" data-es="TFG (CKD-EPI 2021)">TFG (CKD-EPI 2021)</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-clear&#39;)" data-pt="Clearance Creatinina" data-es="Clearance Creatinina">Clearance Creatinina</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-cal&#39;)" data-pt="Necessidade Calórica" data-es="Necesidad Calórica">Necessidade Calórica</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-pack&#39;)" data-pt="Pacotes-Ano" data-es="Paquetes-Año">Pacotes-Ano</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-ig&#39;)" data-pt="Idade Gestacional" data-es="Edad Gestacional">Idade Gestacional</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-cha2&#39;)" data-pt="CHA₂DS₂-VASc" data-es="CHA₂DS₂-VASc">CHA₂DS₂-VASc</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-wells&#39;)" data-pt="Wells (TVP/TEP)" data-es="Wells (TVP/TEP)">Wells (TVP/TEP)</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-alv&#39;)" data-pt="Alvarado" data-es="Alvarado">Alvarado</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-gcs&#39;)" data-pt="Glasgow" data-es="Glasgow">Glasgow</button>
+      <button class="tab-btn" onclick="showTab(&#39;tab-nih&#39;)" data-pt="NIHSS" data-es="NIHSS">NIHSS</button>
+    </div>
+
+    <!-- IMC -->
+    <div id="tab-imc" class="tab-content active">
+      <div class="calc-card">
+        <h3>IMC (Índice de Massa Corporal)</h3>
+        <label data-pt="Peso (kg)" data-es="Peso (kg)">Peso (kg)</label>
+        <input type="number" id="imc-peso" step="0.1" placeholder="Ex: 70">
+        <label data-pt="Altura (m)" data-es="Altura (m)">Altura (m)</label>
+        <input type="number" id="imc-alt" step="0.01" placeholder="Ex: 1.75">
+        <button class="btn small" onclick="calcIMC()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="imc-res" class="calc-result hidden"></div>
+        <p class="calc-ref">OMS, 2000. Classificação: &lt;18,5 baixo peso | 18,5–24,9 eutrófico | 25–29,9 sobrepeso | 30–34,9 obesidade I | 35–39,9 obesidade II | ≥40 obesidade III.</p>
+      </div>
+    </div>
+
+    <!-- Superfície Corporal -->
+    <div id="tab-sc" class="tab-content">
+      <div class="calc-card">
+        <h3>Superfície Corporal — DuBois &amp; DuBois</h3>
+        <label data-pt="Peso (kg)" data-es="Peso (kg)">Peso (kg)</label>
+        <input type="number" id="sc-peso" step="0.1" placeholder="Ex: 70">
+        <label data-pt="Altura (cm)" data-es="Altura (cm)">Altura (cm)</label>
+        <input type="number" id="sc-alt" placeholder="Ex: 175">
+        <button class="btn small" onclick="calcSC()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="sc-res" class="calc-result hidden"></div>
+        <p class="calc-ref">DuBois D, DuBois EF. Arch Intern Med. 1916. Fórmula: SC (m²) = 0,007184 × peso^0,425 × altura^0,725.</p>
+      </div>
+    </div>
+
+    <!-- TFG CKD-EPI 2021 -->
+    <div id="tab-tfg" class="tab-content">
+      <div class="calc-card">
+        <h3>TFG Estimada — CKD-EPI Creatinina 2021 (sem raça)</h3>
+        <label data-pt="Creatinina sérica (mg/dL)" data-es="Creatinina sérica (mg/dL)">Creatinina sérica (mg/dL)</label>
+        <input type="number" id="tfg-cr" step="0.01" placeholder="Ex: 1,1">
+        <label data-pt="Idade (anos)" data-es="Edad (años)">Idade (anos)</label>
+        <input type="number" id="tfg-idade" placeholder="Ex: 45">
+        <label data-pt="Sexo" data-es="Sexo">Sexo</label>
+        <select id="tfg-sexo">
+          <option value="m" data-pt="Masculino" data-es="Masculino">Masculino</option>
+          <option value="f" data-pt="Feminino" data-es="Femenino">Feminino</option>
+        </select>
+        <button class="btn small" onclick="calcTFG()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="tfg-res" class="calc-result hidden"></div>
+        <p class="calc-ref">Inker LA et al. N Engl J Med. 2021; NIDDK. CKD-EPI 2021 (race-free). Classificação KDIGO: G1 ≥90 | G2 60–89 | G3a 45–59 | G3b 30–44 | G4 15–29 | G5 &lt;15.</p>
+      </div>
+    </div>
+
+    <!-- Clearance de Creatinina -->
+    <div id="tab-clear" class="tab-content">
+      <div class="calc-card">
+        <h3>Clearance de Creatinina — Cockcroft-Gault</h3>
+        <label data-pt="Peso (kg)" data-es="Peso (kg)">Peso (kg)</label>
+        <input type="number" id="cg-peso" step="0.1" placeholder="Ex: 70">
+        <label data-pt="Creatinina sérica (mg/dL)" data-es="Creatinina sérica (mg/dL)">Creatinina sérica (mg/dL)</label>
+        <input type="number" id="cg-cr" step="0.01" placeholder="Ex: 1,1">
+        <label data-pt="Idade (anos)" data-es="Edad (años)">Idade (anos)</label>
+        <input type="number" id="cg-idade" placeholder="Ex: 45">
+        <label data-pt="Sexo" data-es="Sexo">Sexo</label>
+        <select id="cg-sexo">
+          <option value="m" data-pt="Masculino" data-es="Masculino">Masculino</option>
+          <option value="f" data-pt="Feminino" data-es="Femenino">Feminino</option>
+        </select>
+        <button class="btn small" onclick="calcCG()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="cg-res" class="calc-result hidden"></div>
+        <p class="calc-ref">Cockcroft DW, Gault MH. Nephron. 1976. Fórmula: ((140-idade)×peso)/(72×Cr) × 0,85 se feminino.</p>
+      </div>
+    </div>
+
+    <!-- Necessidade Calórica -->
+    <div id="tab-cal" class="tab-content">
+      <div class="calc-card">
+        <h3>Necessidade Calórica Diária — Mifflin-St Jeor</h3>
+        <label data-pt="Peso (kg)" data-es="Peso (kg)">Peso (kg)</label>
+        <input type="number" id="cal-peso" step="0.1" placeholder="Ex: 70">
+        <label data-pt="Altura (cm)" data-es="Altura (cm)">Altura (cm)</label>
+        <input type="number" id="cal-alt" placeholder="Ex: 175">
+        <label data-pt="Idade (anos)" data-es="Edad (años)">Idade (anos)</label>
+        <input type="number" id="cal-idade" placeholder="Ex: 30">
+        <label data-pt="Sexo" data-es="Sexo">Sexo</label>
+        <select id="cal-sexo">
+          <option value="m" data-pt="Masculino" data-es="Masculino">Masculino</option>
+          <option value="f" data-pt="Feminino" data-es="Femenino">Feminino</option>
+        </select>
+        <label data-pt="Nível de atividade" data-es="Nivel de actividad">Nível de atividade</label>
+        <select id="cal-atv">
+          <option value="1.2" data-pt="Sedentário" data-es="Sedentario">Sedentário</option>
+          <option value="1.375" data-pt="Levemente ativo" data-es="Ligeramente activo">Levemente ativo</option>
+          <option value="1.55" data-pt="Moderadamente ativo" data-es="Moderadamente activo">Moderadamente ativo</option>
+          <option value="1.725" data-pt="Muito ativo" data-es="Muy activo">Muito ativo</option>
+          <option value="1.9" data-pt="Extremamente ativo" data-es="Extremadamente activo">Extremamente ativo</option>
+        </select>
+        <button class="btn small" onclick="calcCal()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="cal-res" class="calc-result hidden"></div>
+        <p class="calc-ref">Mifflin MD et al. Am J Clin Nutr. 1990. Fator de atividade: 1,2 sedentário | 1,375 leve | 1,55 moderado | 1,725 intenso | 1,9 muito intenso.</p>
+      </div>
+    </div>
+
+    <!-- Pacotes-Ano -->
+    <div id="tab-pack" class="tab-content">
+      <div class="calc-card">
+        <h3>Pacotes-Ano de Cigarro</h3>
+        <label data-pt="Cigarros por dia" data-es="Cigarrillos por día">Cigarros por dia</label>
+        <input type="number" id="pack-dia" placeholder="Ex: 10">
+        <label data-pt="Anos fumando" data-es="Años fumando">Anos fumando</label>
+        <input type="number" id="pack-anos" step="0.5" placeholder="Ex: 15">
+        <button class="btn small" onclick="calcPack()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="pack-res" class="calc-result hidden"></div>
+        <p class="calc-ref">USPSTF. Rastreamento de câncer de pulmão por TC de baixa dose: ≥20 pacotes-ano e idade 50–80 anos. Fórmula: (cigarros/dia ÷ 20) × anos.</p>
+      </div>
+    </div>
+
+    <!-- Idade Gestacional -->
+    <div id="tab-ig" class="tab-content">
+      <div class="calc-card">
+        <h3>Idade Gestacional — Regra de Naegele (DUM)</h3>
+        <label data-pt="Data da última menstruação (DUM)" data-es="Fecha de la última menstruación (FUM)">Data da última menstruação (DUM)</label>
+        <input type="date" id="ig-dum">
+        <button class="btn small" onclick="calcIG()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="ig-res" class="calc-result hidden"></div>
+        <p class="calc-ref">Método de Naegele: DUM + 1 ano – 3 meses + 7 dias. Cálculo da idade gestacional em semanas a partir da DUM.</p>
+      </div>
+    </div>
+
+    <!-- CHA2DS2-VASc -->
+    <div id="tab-cha2" class="tab-content">
+      <div class="calc-card">
+        <h3>CHA₂DS₂-VASc — Risco de AVC em FA</h3>
+        <label><input type="checkbox" id="c1"> <span data-pt="Insuficiência cardíaca congestiva" data-es="Insuficiencia cardíaca congestiva">Insuficiência cardíaca congestiva</span> (+1)</label>
+        <label><input type="checkbox" id="c2"> <span data-pt="Hipertensão arterial" data-es="Hipertensión arterial">Hipertensão arterial</span> (+1)</label>
+        <label><input type="checkbox" id="c3"> <span data-pt="Idade ≥75 anos" data-es="Edad ≥75 años">Idade ≥75 anos</span> (+2)</label>
+        <label><input type="checkbox" id="c4"> <span data-pt="Diabetes mellitus" data-es="Diabetes mellitus">Diabetes mellitus</span> (+1)</label>
+        <label><input type="checkbox" id="c5"> <span data-pt="AVC/AIT prévio" data-es="ACV/ATA previo">AVC/AIT prévio</span> (+2)</label>
+        <label><input type="checkbox" id="c6"> <span data-pt="Doença vascular (IAM, placa aórtica, etc.)" data-es="Enfermedad vascular (IAM, placa aórtica, etc.)">Doença vascular (IAM, placa aórtica, etc.)</span> (+1)</label>
+        <label><input type="checkbox" id="c7"> <span data-pt="Idade 65–74 anos" data-es="Edad 65–74 años">Idade 65–74 anos</span> (+1)</label>
+        <label><input type="checkbox" id="c8"> <span data-pt="Sexo feminino" data-es="Sexo femenino">Sexo feminino</span> (+1)</label>
+        <button class="btn small" onclick="calcCHA2()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="cha2-res" class="calc-result hidden"></div>
+        <p class="calc-ref">Lip GYH et al. Chest 2010. ESC 2024 recomenda CHA₂DS₂-VA (sem sexo). CHA₂DS₂-VASc: ≥2 homens / ≥3 mulheres = anticoagulação indicada.</p>
+      </div>
+    </div>
+
+    <!-- Wells -->
+    <div id="tab-wells" class="tab-content">
+      <div class="calc-card">
+        <h3>Wells — TVP / TEP</h3>
+        <div class="tabs" style="margin-bottom:16px">
+          <button class="tab-btn active" onclick="showWells(&#39;wells-tvp&#39;)" data-pt="TVP" data-es="TVP">TVP</button>
+          <button class="tab-btn" onclick="showWells(&#39;wells-tep&#39;)" data-pt="TEP" data-es="TEP">TEP</button>
+        </div>
+        <!-- TVP -->
+        <div id="wells-tvp" class="tab-content active">
+          <label><input type="checkbox" id="w1"> <span data-pt="Câncer ativo (tratamento nos últimos 6 meses ou paliativo)" data-es="Cáncer activo (tratamiento en los últimos 6 meses o paliativo)">Câncer ativo (tratamento nos últimos 6 meses ou paliativo)</span> (+1)</label>
+          <label><input type="checkbox" id="w2"> <span data-pt="Paralisia, paresia ou imobilização recente do membro inferior" data-es="Parálisis, paresia o inmovilización reciente del miembro inferior">Paralisia, paresia ou imobilização recente do membro inferior</span> (+1)</label>
+          <label><input type="checkbox" id="w3"> <span data-pt="Acamado ≥3 dias ou cirurgia maior nas últimas 12 semanas" data-es="Encamado ≥3 días o cirugía mayor en las últimas 12 semanas">Acamado ≥3 dias ou cirurgia maior nas últimas 12 semanas</span> (+1)</label>
+          <label><input type="checkbox" id="w4"> <span data-pt="Dor localizada ao longo do sistema venoso profundo" data-es="Dolor localizado a lo largo del sistema venoso profundo">Dor localizada ao longo do sistema venoso profundo</span> (+1)</label>
+          <label><input type="checkbox" id="w5"> <span data-pt="Edema de toda a perna" data-es="Edema de toda la pierna">Edema de toda a perna</span> (+1)</label>
+          <label><input type="checkbox" id="w6"> <span data-pt="Edema da panturrilha ≥3 cm vs lado assintomático (10 cm abaixo da tuberosidade tibial)" data-es="Edema de la pantorrilla ≥3 cm vs lado asintomático (10 cm debajo de la tuberosidad tibial)">Edema da panturrilha ≥3 cm vs lado assintomático (10 cm abaixo da tuberosidade tibial)</span> (+1)</label>
+          <label><input type="checkbox" id="w7"> <span data-pt="Edema de fossas restrito à perna sintomática" data-es="Edema de fositas restringido a la pierna sintomática">Edema de fossas restrito à perna sintomática</span> (+1)</label>
+          <label><input type="checkbox" id="w8"> <span data-pt="Veias colaterais superficiais (não varicosas)" data-es="Venas colaterales superficiales (no varicosas)">Veias colaterais superficiais (não varicosas)</span> (+1)</label>
+          <label><input type="checkbox" id="w9"> <span data-pt="TVP documentada previamente" data-es="TVP documentada previamente">TVP documentada previamente</span> (+1)</label>
+          <label><input type="checkbox" id="w10"> <span data-pt="Diagnóstico alternativo pelo menos tão provável quanto TVP" data-es="Diagnóstico alternativo al menos tan probable como TVP">Diagnóstico alternativo pelo menos tão provável quanto TVP</span> (−2)</label>
+          <button class="btn small" onclick="calcWellsTVP()" style="margin-top:12px" data-pt="Calcular TVP" data-es="Calcular TVP">Calcular TVP</button>
+          <div id="wells-tvp-res" class="calc-result hidden"></div>
+        </div>
+        <!-- TEP -->
+        <div id="wells-tep" class="tab-content">
+          <label><input type="checkbox" id="wt1"> <span data-pt="Sintomas de TVP (edema e dor com palpação da perna)" data-es="Síntomas de TVP (edema y dolor con palpación de la pierna)">Sintomas de TVP (edema e dor com palpação da perna)</span> (+3)</label>
+          <label><input type="checkbox" id="wt2"> <span data-pt="TEP tão provável ou mais provável que diagnóstico alternativo" data-es="TEP tan probable o más probable que diagnóstico alternativo">TEP tão provável ou mais provável que diagnóstico alternativo</span> (+3)</label>
+          <label><input type="checkbox" id="wt3"> <span data-pt="FC &gt;100 bpm" data-es="FC &gt;100 lpm">FC &gt;100 bpm</span> (+1,5)</label>
+          <label><input type="checkbox" id="wt4"> <span data-pt="Imobilização ≥3 dias ou cirurgia nas últimas 4 semanas" data-es="Inmovilización ≥3 días o cirugía en las últimas 4 semanas">Imobilização ≥3 dias ou cirurgia nas últimas 4 semanas</span> (+1,5)</label>
+          <label><input type="checkbox" id="wt5"> <span data-pt="TVP ou TEP prévio" data-es="TVP o TEP previo">TVP ou TEP prévio</span> (+1,5)</label>
+          <label><input type="checkbox" id="wt6"> <span data-pt="Hemoptise" data-es="Hemoptisis">Hemoptise</span> (+1)</label>
+          <label><input type="checkbox" id="wt7"> <span data-pt="Malignidade (tratamento ativo ou nos últimos 6 meses)" data-es="Malignidad (tratamiento activo o en los últimos 6 meses)">Malignidade (tratamento ativo ou nos últimos 6 meses)</span> (+1)</label>
+          <button class="btn small" onclick="calcWellsTEP()" style="margin-top:12px" data-pt="Calcular TEP" data-es="Calcular TEP">Calcular TEP</button>
+          <div id="wells-tep-res" class="calc-result hidden"></div>
+        </div>
+        <p class="calc-ref">Wells PS et al. Thromb Haemost 2000 (TVP); Wells PS et al. Thromb Haemost 2000 (TEP). TVP: ≤0 baixa | 1–2 moderada | ≥3 alta. TEP: ≤4 improvável | &gt;4 provável.</p>
+      </div>
+    </div>
+
+    <!-- Alvarado -->
+    <div id="tab-alv" class="tab-content">
+      <div class="calc-card">
+        <h3>Alvarado — Apendicite Aguda</h3>
+        <label><input type="checkbox" id="a1"> <span data-pt="Migração da dor para QID" data-es="Migración del dolor a FID">Migração da dor para QID</span> (+1)</label>
+        <label><input type="checkbox" id="a2"> <span data-pt="Anorexia" data-es="Anorexia">Anorexia</span> (+1)</label>
+        <label><input type="checkbox" id="a3"> <span data-pt="Náuseas ou vômitos" data-es="Náuseas o vómitos">Náuseas ou vômitos</span> (+1)</label>
+        <label><input type="checkbox" id="a4"> <span data-pt="Dor em QID (McBurney)" data-es="Dolor en FID (McBurney)">Dor em QID (McBurney)</span> (+2)</label>
+        <label><input type="checkbox" id="a5"> <span data-pt="Rebound positivo" data-es="Rebound positivo">Rebound positivo</span> (+1)</label>
+        <label><input type="checkbox" id="a6"> <span data-pt="Febre &gt;37,3°C" data-es="Fiebre &gt;37,3°C">Febre &gt;37,3°C</span> (+1)</label>
+        <label><input type="checkbox" id="a7"> <span data-pt="Leucocitose &gt;10.000/mm³" data-es="Leucocitosis &gt;10.000/mm³">Leucocitose &gt;10.000/mm³</span> (+2)</label>
+        <label><input type="checkbox" id="a8"> <span data-pt="Desvio à esquerda (&gt;75% neutrófilos)" data-es="Desviación a la izquierda (&gt;75% neutrófilos)">Desvio à esquerda (&gt;75% neutrófilos)</span> (+1)</label>
+        <button class="btn small" onclick="calcAlvarado()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="alv-res" class="calc-result hidden"></div>
+        <p class="calc-ref">Alvarado A. Ann Emerg Med. 1986. ≤4 pouco provável | 5–6 possível | 7–8 provável | ≥9 muito provável. Sensibilidade ~95% com corte ≥6.</p>
+      </div>
+    </div>
+
+    <!-- Glasgow -->
+    <div id="tab-gcs" class="tab-content">
+      <div class="calc-card">
+        <h3>Glasgow Coma Scale (GCS)</h3>
+        <label data-pt="Abertura ocular" data-es="Apertura ocular">Abertura ocular</label>
+        <select id="gcs-eye">
+          <option value="4" data-pt="4 — Espontânea" data-es="4 — Espontánea">4 — Espontânea</option>
+          <option value="3" data-pt="3 — Ao comando verbal" data-es="3 — Al comando verbal">3 — Ao comando verbal</option>
+          <option value="2" data-pt="2 — À dor" data-es="2 — Al dolor">2 — À dor</option>
+          <option value="1" data-pt="1 — Nenhuma" data-es="1 — Ninguna">1 — Nenhuma</option>
+        </select>
+        <label data-pt="Resposta verbal" data-es="Respuesta verbal">Resposta verbal</label>
+        <select id="gcs-verbal">
+          <option value="5" data-pt="5 — Orientado" data-es="5 — Orientado">5 — Orientado</option>
+          <option value="4" data-pt="4 — Confuso" data-es="4 — Confuso">4 — Confuso</option>
+          <option value="3" data-pt="3 — Palavras inapropriadas" data-es="3 — Palabras inapropiadas">3 — Palavras inapropriadas</option>
+          <option value="2" data-pt="2 — Sons incompreensíveis" data-es="2 — Sonidos incomprensibles">2 — Sons incompreensíveis</option>
+          <option value="1" data-pt="1 — Nenhuma" data-es="1 — Ninguna">1 — Nenhuma</option>
+        </select>
+        <label data-pt="Resposta motora" data-es="Respuesta motora">Resposta motora</label>
+        <select id="gcs-motor">
+          <option value="6" data-pt="6 — Obedece comandos" data-es="6 — Obedece comandos">6 — Obedece comandos</option>
+          <option value="5" data-pt="5 — Localiza a dor" data-es="5 — Localiza el dolor">5 — Localiza a dor</option>
+          <option value="4" data-pt="4 — Retirada à dor" data-es="4 — Retirada al dolor">4 — Retirada à dor</option>
+          <option value="3" data-pt="3 — Flexão anormal (decorticação)" data-es="3 — Flexión anormal (descorticación)">3 — Flexão anormal (decorticação)</option>
+          <option value="2" data-pt="2 — Extensão anormal (descerebração)" data-es="2 — Extensión anormal (descerebración)">2 — Extensão anormal (descerebração)</option>
+          <option value="1" data-pt="1 — Nenhuma" data-es="1 — Ninguna">1 — Nenhuma</option>
+        </select>
+        <button class="btn small" onclick="calcGCS()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="gcs-res" class="calc-result hidden"></div>
+        <p class="calc-ref">Teasdale G, Jennett B. Lancet. 1974. 3–8 grave | 9–12 moderado | 13–15 leve. GCS-P (2018): subtrair reação pupilar (0–2).</p>
+      </div>
+    </div>
+
+    <!-- NIHSS -->
+    <div id="tab-nih" class="tab-content">
+      <div class="calc-card">
+        <h3>NIH Stroke Scale (NIHSS)</h3>
+        <label data-pt="1a. Nível de consciência" data-es="1a. Nivel de conciencia">1a. Nível de consciência</label>
+        <select id="n1"><option value="0">0 — Alerta</option><option value="1">1 — Não alerta, mas despertável</option><option value="2">2 — Não alerta, reage a estímulo</option><option value="3">3 — Coma / sem resposta</option></select>
+        <label data-pt="1b. Perguntas (mês, idade) — 0-2" data-es="1b. Preguntas (mes, edad) — 0-2">1b. Perguntas (mês, idade) — 0-2</label>
+        <select id="n2"><option value="0">0 — Responde ambas corretamente</option><option value="1">1 — Responde uma corretamente</option><option value="2">2 — Responde nenhuma corretamente</option></select>
+        <label data-pt="1c. Comandos (abrir/fechar olhos, apertar/soltar mão) — 0-2" data-es="1c. Comandos (abrir/cerrar ojos, apretar/soltar mano) — 0-2">1c. Comandos (abrir/fechar olhos, apertar/soltar mão) — 0-2</label>
+        <select id="n3"><option value="0">0 — Executa ambos corretamente</option><option value="1">1 — Executa um corretamente</option><option value="2">2 — Executa nenhum corretamente</option></select>
+        <label data-pt="2. Olhar conjugado — 0-2" data-es="2. Mirada conjugada — 0-2">2. Olhar conjugado — 0-2</label>
+        <select id="n4"><option value="0">0 — Normal</option><option value="1">1 — Desvio parcial do olhar</option><option value="2">2 — Desvio forçado / não superável</option></select>
+        <label data-pt="3. Campo visual — 0-3" data-es="3. Campo visual — 0-3">3. Campo visual — 0-3</label>
+        <select id="n5"><option value="0">0 — Sem perda</option><option value="1">1 — Hemianopsia parcial</option><option value="2">2 — Hemianopsia completa</option><option value="3">3 — Hemianopsia bilateral (cego)</option></select>
+        <label data-pt="4. Paralisia facial — 0-3" data-es="4. Parálisis facial — 0-3">4. Paralisia facial — 0-3</label>
+        <select id="n6"><option value="0">0 — Normal</option><option value="1">1 — Leve (assimetria mínima)</option><option value="2">2 — Moderada</option><option value="3">3 — Completa (ausente)</option></select>
+        <label data-pt="5a. Braço motor esquerdo — 0-4" data-es="5a. Brazo motor izquierdo — 0-4">5a. Braço motor esquerdo — 0-4</label>
+        <select id="n7"><option value="0">0 — Não cai por 10 segundos</option><option value="1">1 — Cai, mas não atinge a cama</option><option value="2">2 — Esforço contra a gravidade</option><option value="3">3 — Sem esforço contra a gravidade</option><option value="4">4 — Nenhum movimento</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="5b. Braço motor direito — 0-4" data-es="5b. Brazo motor derecho — 0-4">5b. Braço motor direito — 0-4</label>
+        <select id="n8"><option value="0">0 — Não cai por 10 segundos</option><option value="1">1 — Cai, mas não atinge a cama</option><option value="2">2 — Esforço contra a gravidade</option><option value="3">3 — Sem esforço contra a gravidade</option><option value="4">4 — Nenhum movimento</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="6a. Perna motor esquerda — 0-4" data-es="6a. Pierna motor izquierda — 0-4">6a. Perna motor esquerda — 0-4</label>
+        <select id="n9"><option value="0">0 — Não cai por 5 segundos</option><option value="1">1 — Cai, mas não atinge a cama</option><option value="2">2 — Esforço contra a gravidade</option><option value="3">3 — Sem esforço contra a gravidade</option><option value="4">4 — Nenhum movimento</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="6b. Perna motor direita — 0-4" data-es="6b. Pierna motor derecha — 0-4">6b. Perna motor direita — 0-4</label>
+        <select id="n10"><option value="0">0 — Não cai por 5 segundos</option><option value="1">1 — Cai, mas não atinge a cama</option><option value="2">2 — Esforço contra a gravidade</option><option value="3">3 — Sem esforço contra a gravidade</option><option value="4">4 — Nenhum movimento</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="7. Ataxia de membros — 0-2" data-es="7. Ataxia de miembros — 0-2">7. Ataxia de membros — 0-2</label>
+        <select id="n11"><option value="0">0 — Ausente</option><option value="1">1 — Presente em um membro</option><option value="2">2 — Presente em dois membros</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="8. Sensibilidade — 0-2" data-es="8. Sensibilidad — 0-2">8. Sensibilidade — 0-2</label>
+        <select id="n12"><option value="0">0 — Normal</option><option value="1">1 — Leve a moderada perda</option><option value="2">2 — Perda grave a completa</option></select>
+        <label data-pt="9. Melhor linguagem — 0-3" data-es="9. Mejor lenguaje — 0-3">9. Melhor linguagem — 0-3</label>
+        <select id="n13"><option value="0">0 — Sem afasia</option><option value="1">1 — Afasia leve a moderada</option><option value="2">2 — Afasia grave</option><option value="3">3 — Mudo / afasia global</option></select>
+        <label data-pt="10. Disartria — 0-2" data-es="10. Disartria — 0-2">10. Disartria — 0-2</label>
+        <select id="n14"><option value="0">0 — Normal</option><option value="1">1 — Leve a moderada</option><option value="2">2 — Grave</option><option value="UN">UN — Intubação / outro impedimento</option></select>
+        <label data-pt="11. Extinção / inatenção — 0-2" data-es="11. Extinción / inatención — 0-2">11. Extinção / inatenção — 0-2</label>
+        <select id="n15"><option value="0">0 — Sem alteração</option><option value="1">1 — Inatenção a um modalidade</option><option value="2">2 — Inatenção a mais de um modalidade / hemiinatenção</option></select>
+        <button class="btn small" onclick="calcNIH()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="nih-res" class="calc-result hidden"></div>
+        <p class="calc-ref">NIH Stroke Scale, NINDS 2024 (atualizado com "Precarious Painter"). 0–5 leve | 6–15 moderado | 16–20 moderado a grave | 21–42 grave.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ESTUDOS (resumo na home) -->
+<section id="estudos" class="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker" data-pt="Estudos" data-es="Estudios">Estudos</div>
+        <h2 data-pt="Seu hub de conhecimento" data-es="Su hub de conocimiento">Seu hub de conhecimento</h2>
+      </div>
+      <p data-pt="Área reservada para estudantes e profissionais. Acesse a página completa." data-es="Área reservada para estudiantes y profesionales. Acceda a la página completa.">Área reservada para estudantes e profissionais. Acesse a página completa.</p>
+    </div>
+    <div class="cta">
+      <h2 data-pt="Área de estudos" data-es="Área de estudios">Área de estudos</h2>
+      <p data-pt="Resumos, protocolos, aulas e materiais para estudantes e profissionais de saúde." data-es="Resúmenes, protocolos, clases y materiales para estudiantes y profesionales de salud.">Resumos, protocolos, aulas e materiais para estudantes e profissionais de saúde.</p>
+      <a class="btn" href="" data-pt="Acessar área de estudos →" data-es="Acceder área de estudios →">Acessar área de estudos →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="container">
+    <div class="cta">
+      <div class="kicker" style="color:#bfdbfe" data-pt="Contato" data-es="Contacto">Contato</div>
+      <h2 data-pt="Agende seu atendimento" data-es="Agende su atención">Agende seu atendimento</h2>
+      <p data-pt="Entre em contato para verificar disponibilidade, tirar dúvidas ou agendar sua consulta. Atendimento em português e espanhol." data-es="Contacte para verificar disponibilidad, resolver dudas o agendar su consulta. Atención en portugués y español.">Entre em contato para verificar disponibilidade, tirar dúvidas ou agendar sua consulta. Atendimento em português e espanhol.</p>
+      <span class="btn" style="opacity:.6;cursor:default" data-pt="Canal de contato em breve" data-es="Canal de contacto próximamente">Canal de contato em breve</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><b>Dr. Gabriel C. de Sena</b><br>MÉDICO CLÍNICO GERAL • Brasil / Argentina</div>
+    <div>© 2026 • Todos os direitos reservados.</div>
+  </div>
+  <div class="container disclaimer" data-pt="As informações deste site têm finalidade educativa e não substituem avaliação médica individualizada. Sempre consulte um profissional de saúde qualificado." data-es="La información de este sitio tiene finalidad educativa y no sustituye evaluación médica individualizada. Siempre consulte a un profesional de salud calificado.">As informações deste site têm finalidade educativa e não substituem avaliação médica individualizada. Sempre consulte um profissional de saúde qualificado.</div>
+</footer>
+
+<script>
+// ===================== IDIOMA =====================
+let currentLang = 'pt';
+function toggleLang(){
+  currentLang = currentLang === 'pt' ? 'es' : 'pt';
+  document.getElementById('langBtn').textContent = currentLang === 'pt' ? 'ES' : 'PT';
+  document.querySelectorAll('[data-pt]').forEach(el => {
+    if(el.tagName !== 'OPTION') el.textContent = el.getAttribute('data-' + currentLang);
+  });
+  document.querySelectorAll('option[data-pt]').forEach(opt => {
+    opt.textContent = opt.getAttribute('data-' + currentLang);
+  });
+}
+
+// ===================== TABS =====================
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+function showWells(id){
+  document.querySelectorAll('#wells-tvp, #wells-tep').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const btns = event.target.parentElement.querySelectorAll('.tab-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// ===================== IMC =====================
+function calcIMC(){
+  const p = parseFloat(document.getElementById('imc-peso').value.replace(',','.'));
+  const a = parseFloat(document.getElementById('imc-alt').value.replace(',','.'));
+  if(!p || !a || a<=0){ alert(currentLang==='pt'?'Preencha peso e altura válidos':'Complete peso y altura válidos'); return; }
+  const imc = p/(a*a);
+  let cat = '', color='';
+  if(imc<18.5){ cat='Baixo peso'; color='var(--warn)'; }
+  else if(imc<25){ cat='Eutrófico'; color='var(--accent)'; }
+  else if(imc<30){ cat='Sobrepeso'; color='var(--warn)'; }
+  else if(imc<35){ cat='Obesidade I'; color='var(--danger)'; }
+  else if(imc<40){ cat='Obesidade II'; color='var(--danger)'; }
+  else { cat='Obesidade III'; color='var(--danger)'; }
+  const r = document.getElementById('imc-res');
+  r.innerHTML = '<strong style="color:'+color+'">IMC: '+imc.toFixed(1)+' — '+cat+'</strong>';
+  r.classList.remove('hidden');
+}
+
+// ===================== SC =====================
+function calcSC(){
+  const p = parseFloat(document.getElementById('sc-peso').value.replace(',','.'));
+  const h = parseFloat(document.getElementById('sc-alt').value.replace(',','.'));
+  if(!p || !h){ alert(currentLang==='pt'?'Preencha peso e altura':'Complete peso y altura'); return; }
+  const sc = 0.007184 * Math.pow(p, 0.425) * Math.pow(h, 0.725);
+  const r = document.getElementById('sc-res');
+  r.innerHTML = '<strong>SC: '+sc.toFixed(2)+' m²</strong>';
+  r.classList.remove('hidden');
+}
+
+// ===================== TFG CKD-EPI 2021 =====================
+function calcTFG(){
+  const cr = parseFloat(document.getElementById('tfg-cr').value.replace(',','.'));
+  const age = parseInt(document.getElementById('tfg-idade').value);
+  const sex = document.getElementById('tfg-sexo').value;
+  if(!cr || !age){ alert(currentLang==='pt'?'Preencha creatinina e idade':'Complete creatinina y edad'); return; }
+  let k = sex==='f'?0.7:0.9;
+  let alpha = sex==='f'?-0.241:-0.302;
+  let min = Math.min(cr/k, 1);
+  let max = Math.max(cr/k, 1);
+  let gfr = 142 * Math.pow(min, alpha) * Math.pow(max, -1.200) * Math.pow(0.9938, age);
+  if(sex==='f') gfr *= 1.012;
+  let cat = '';
+  if(gfr>=90) cat='G1 — Normal/elevado';
+  else if(gfr>=60) cat='G2 — Levemente diminuído';
+  else if(gfr>=45) cat='G3a — Moderadamente diminuído';
+  else if(gfr>=30) cat='G3b — Moderadamente a gravemente diminuído';
+  else if(gfr>=15) cat='G4 — Gravemente diminuído';
+  else cat='G5 — Falência renal';
+  const r = document.getElementById('tfg-res');
+  r.innerHTML = '<strong>TFG: '+gfr.toFixed(1)+' mL/min/1,73m² — '+cat+'</strong>';
+  r.classList.remove('hidden');
+}
+
+// ===================== Cockcroft-Gault =====================
+function calcCG(){
+  const p = parseFloat(document.getElementById('cg-peso').value.replace(',','.'));
+  const cr = parseFloat(document.getElementById('cg-cr').value.replace(',','.'));
+  const age = parseInt(document.getElementById('cg-idade').value);
+  const sex = document.getElementById('cg-sexo').value;
+  if(!p || !cr || !age){ alert(currentLang==='pt'?'Preencha todos os campos':'Complete todos los campos'); return; }
+  let cl = ((140 - age) * p) / (72 * cr);
+  if(sex==='f') cl *= 0.85;
+  const r = document.getElementById('cg-res');
+  r.innerHTML = '<strong>ClCr: '+cl.toFixed(1)+' mL/min</strong>';
+  r.classList.remove('hidden');
+}
+
+// ===================== Necessidade Calórica =====================
+function calcCal(){
+  const p = parseFloat(document.getElementById('cal-peso').value.replace(',','.'));
+  const h = parseFloat(document.getElementById('cal-alt').value.replace(',','.'));
+  const age = parseInt(document.getElementById('cal-idade').value);
+  const sex = document.getElementById('cal-sexo').value;
+  const atv = parseFloat(document.getElementById('cal-atv').value);
+  if(!p || !h || !age){ alert(currentLang==='pt'?'Preencha todos os campos':'Complete todos los campos'); return; }
+  let bmr = (10 * p) + (6.25 * h) - (5 * age);
+  bmr += sex==='m'?5:-161;
+  let tdee = bmr * atv;
+  const r = document.getElementById('cal-res');
+  r.innerHTML = '<strong>TMB: '+bmr.toFixed(0)+' kcal/dia | GET: '+tdee.toFixed(0)+' kcal/dia</strong>';
+  r.classList.remove('hidden');
+}
+
+// ===================== Pacotes-Ano =====================
+function calcPack(){
+  const dia = parseFloat(document.getElementById('pack-dia').value.replace(',','.'));
+  const anos = parseFloat(document.getElementById('pack-anos').value.replace(',','.'));
+  if(!dia || !anos){ alert(currentLang==='pt'?'Preencha todos os campos':'Complete todos los campos'); return; }
+  const py = (dia / 20) * anos;
+  let msg = '';
+  if(py>=20) msg = ' — Elegível para rastreamento de câncer de pulmão (USPSTF)';
+  const r = document.getElementById('pack-res');
+  r.innerHTML = '<strong>'+py.toFixed(1)+' pacotes-ano</strong>'+msg;
+  r.classList.remove('hidden');
+}
+
+// ===================== Idade Gestacional =====================
+function calcIG(){
+  const dum = document.getElementById('ig-dum').value;
+  if(!dum){ alert(currentLang==='pt'?'Selecione a data da DUM':'Seleccione la fecha de la FUM'); return; }
+  const d = new Date(dum);
+  const hoje = new Date();
+  const diffTime = Math.abs(hoje - d);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const semanas = Math.floor(diffDays / 7);
+  const dias = diffDays % 7;
+  const dpp = new Date(d);
+  dpp.setFullYear(dpp.getFullYear() + 1);
+  dpp.setMonth(dpp.getMonth() - 3);
+  dpp.setDate(dpp.getDate() + 7);
+  const dppStr = dpp.toLocaleDateString(currentLang==='pt'?'pt-BR':'es-AR');
+  const r = document.getElementById('ig-res');
+  r.innerHTML = '<strong>IG: '+semanas+' semanas e '+dias+' dias</strong><br>DPP (Naegele): '+dppStr;
+  r.classList.remove('hidden');
+}
+
+// ===================== CHA2DS2-VASc =====================
+function calcCHA2(){
+  let s = 0;
+  if(document.getElementById('c1').checked) s += 1;
+  if(document.getElementById('c2').checked) s += 1;
+  if(document.getElementById('c3').checked) s += 2;
+  if(document.getElementById('c4').checked) s += 1;
+  if(document.getElementById('c5').checked) s += 2;
+  if(document.getElementById('c6').checked) s += 1;
+  if(document.getElementById('c7').checked) s += 1;
+  if(document.getElementById('c8').checked) s += 1;
+  let rec = '';
+  if(s===0) rec = 'Baixo risco — anticoagulação geralmente não indicada';
+  else if(s===1) rec = 'Risco intermediário — considerar anticoagulação';
+  else rec = 'Risco elevado — anticoagulação recomendada';
+  const r = document.getElementById('cha2-res');
+  r.innerHTML = '<strong>Score: '+s+' — '+rec+'</strong>';
+  r.classList.remove('hidden');
+}
+
+// ===================== Wells TVP =====================
+function calcWellsTVP(){
+  let s = 0;
+  for(let i=1;i<=9;i++) if(document.getElementById('w'+i).checked) s += 1;
+  if(document.getElementById('w10').checked) s -= 2;
+  let prob = '';
+  if(s<=0) prob = 'Baixa probabilidade';
+  else if(s<=2) prob = 'Probabilidade moderada';
+  else prob = 'Alta probabilidade';
+  const r = document.getElementById('wells-tvp-res');
+  r.innerHTML = '<strong>Score: '+s+' — '+prob+'</strong>';
+  r.classList.remove('hidden');
+}
+
+// ===================== Wells TEP =====================
+function calcWellsTEP(){
+  let s = 0;
+  if(document.getElementById('wt1').checked) s += 3;
+  if(document.getElementById('wt2').checked) s += 3;
+  if(document.getElementById('wt3').checked) s += 1.5;
+  if(document.getElementById('wt4').checked) s += 1.5;
+  if(document.getElementById('wt5').checked) s += 1.5;
+  if(document.getElementById('wt6').checked) s += 1;
+  if(document.getElementById('wt7').checked) s += 1;
+  let prob = s<=4 ? 'TEP improvável' : 'TEP provável';
+  const r = document.getElementById('wells-tep-res');
+  r.innerHTML = '<strong>Score: '+s+' — '+prob+'</strong>';
+  r.classList.remove('hidden');
+}
+
+// ===================== Alvarado =====================
+function calcAlvarado(){
+  let s = 0;
+  if(document.getElementById('a1').checked) s += 1;
+  if(document.getElementById('a2').checked) s += 1;
+  if(document.getElementById('a3').checked) s += 1;
+  if(document.getElementById('a4').checked) s += 2;
+  if(document.getElementById('a5').checked) s += 1;
+  if(document.getElementById('a6').checked) s += 1;
+  if(document.getElementById('a7').checked) s += 2;
+  if(document.getElementById('a8').checked) s += 1;
+  let prob = '';
+  if(s<=4) prob = 'Pouco provável';
+  else if(s<=6) prob = 'Possível';
+  else if(s<=8) prob = 'Provável';
+  else prob = 'Muito provável';
+  const r = document.getElementById('alv-res');
+  r.innerHTML = '<strong>Score: '+s+' — '+prob+'</strong>';
+  r.classList.remove('hidden');
+}
+
+// ===================== Glasgow =====================
+function calcGCS(){
+  const eye = parseInt(document.getElementById('gcs-eye').value);
+  const verbal = parseInt(document.getElementById('gcs-verbal').value);
+  const motor = parseInt(document.getElementById('gcs-motor').value);
+  const total = eye + verbal + motor;
+  let sev = '';
+  if(total<=8) sev = 'Grave (coma)';
+  else if(total<=12) sev = 'Moderado';
+  else sev = 'Leve';
+  const r = document.getElementById('gcs-res');
+  r.innerHTML = '<strong>GCS: '+total+' — '+sev+'</strong> (Ocular '+eye+' + Verbal '+verbal+' + Motor '+motor+')';
+  r.classList.remove('hidden');
+}
+
+// ===================== NIHSS =====================
+function calcNIH(){
+  let s = 0;
+  for(let i=1;i<=15;i++){
+    const v = document.getElementById('n'+i).value;
+    if(v !== 'UN') s += parseInt(v);
+  }
+  let sev = '';
+  if(s<=5) sev = 'AVC leve';
+  else if(s<=15) sev = 'AVC moderado';
+  else if(s<=20) sev = 'AVC moderado a grave';
+  else sev = 'AVC grave';
+  const r = document.getElementById('nih-res');
+  r.innerHTML = '<strong>NIHSS: '+s+' — '+sev+'</strong>';
+  r.classList.remove('hidden');
+}
+</script>
+
+
+
+</body></html>
