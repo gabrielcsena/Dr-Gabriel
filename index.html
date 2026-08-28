@@ -6,67 +6,6 @@
 <meta name="description" content="Site profissional do Dr. Gabriel C. de Sena, Médico Clínico Geral. Atendimento médico, conteúdo de saúde e ferramentas educativas.">
 <style>
 :root{--ink:#13212b;--muted:#66747d;--line:#dfe7e9;--bg:#f8fbff;--card:#fff;--accent:#60a5fa;--accent2:#3b82f6;--accent-light:#eff6ff;--warn:#c9a227;--danger:#b42318}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}header{position:sticky;top:0;background:#ffffffee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:10}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:-.03em;font-size:20px}.brand span{color:var(--accent)}nav{display:flex;gap:24px;font-size:14px;color:#41505a;align-items:center}nav a:hover{color:var(--accent)}.lang-switch{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;color:var(--accent)}.lang-switch:hover{background:var(--accent);color:#fff;border-color:var(--accent)}.btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;border:0;cursor:pointer}.btn:hover{background:var(--accent2)}.btn.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}.btn.small{padding:8px 14px;font-size:13px}.hero{padding:86px 0 70px;background:linear-gradient(135deg,#eff6ff,#fff)}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800;color:var(--accent)}h1{font-size:clamp(42px,6vw,70px);line-height:1.02;letter-spacing:-.055em;margin:14px 0 20px}h2{font-size:34px;letter-spacing:-.04em;margin:0 0 10px}h3{margin:0 0 8px}.lead{font-size:19px;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.profile-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 18px 50px #13212b14}.avatar{width:88px;height:88px;border-radius:50%;background:var(--accent-light);display:grid;place-items:center;color:var(--accent);font-size:30px;font-weight:800;margin-bottom:20px}img.avatar{object-fit:cover;display:block!important;background:none!important}.badge{display:inline-block;background:var(--accent-light);color:var(--accent);padding:5px 9px;border-radius:999px;font-size:12px;font-weight:800}section{padding:76px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}.section-head p{color:var(--muted);max-width:620px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:25px;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-3px);box-shadow:0 12px 40px #13212b10}.icon{font-size:26px;margin-bottom:14px}.card p{color:var(--muted);font-size:15px}.arrow{color:var(--accent);font-weight:800}.about{background:#fff}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.facts{display:grid;gap:12px}.fact{padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}.cta{background:#1e40af;color:#fff;border-radius:24px;padding:45px}.cta p{color:#dbeafe}.cta .btn{background:#fff;color:var(--accent2)}footer{padding:35px 0;color:#6a777d;font-size:13px;border-top:1px solid var(--line)}.footer-grid{display:flex;justify-content:space-between;gap:20px}.disclaimer{font-size:12px;color:#7a858a;margin-top:25px}@media(max-width:800px){nav{display:none}.hero-grid,.about-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding-top:55px}.section-head{display:block}.footer-grid{flex-direction:column}}
-
-  /* =========================
-   RESPONSIVIDADE - CELULAR
-   ========================= */
-
-@media (max-width: 768px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
-    .container {
-        width: 90%;
-        max-width: none;
-    }
-
-    h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-
-    /* Menu */
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Seções */
-    section {
-        padding: 50px 0;
-    }
-
-    /* Cards */
-    .cards,
-    .services-grid,
-    .calculator-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Botões */
-    button,
-    .btn {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    /* Imagens */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-}
   
 /* Calculadoras */
 .calc-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
@@ -92,7 +31,7 @@
 <!--<base target="_blank">--><!--<base href="." target="_blank">--><base href="." target="_blank">
 <!--<base target="_blank">--><base href="." target="_blank">
 </head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
 <body>
 
 <header>
@@ -103,10 +42,10 @@
       <a href="conteudo-medico.html" data-pt="Conteúdo Médico" data-es="Contenido Médico">Conteúdo Médico</a>
       <a href="#ferramentas" data-pt="Calculadoras" data-es="Calculadoras">Calculadoras</a>
       <a href="artigos.html" data-pt="Artigos Científicos" data-es="Artículos Científicos">Artigos Científicos</a>
-      <button class="lang-switch" onclick="toggleLang()" id="langBtn">ES</button>
     </nav>
+    <button class="lang-switch" onclick="toggleLang()" id="langBtn">ES</button>
     <a class="btn" href="https://wa.me/5511994269621" id="heroBtn" data-pt="Agendar" data-es="Agendar">Agendar</a>
-  </div>
+      </div>
 </header>
 
 <main>
