@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Gabriel C. de Sena — Médico Clínico Geral</title>
+<meta name="description" content="Site profissional do Dr. Gabriel C. de Sena, Médico Clínico Geral. Atendimento médico, conteúdo de saúde e ferramentas educativas.">
+<style>
+:root{--ink:#13212b;--muted:#66747d;--line:#dfe7e9;--bg:#f8fbff;--card:#fff;--accent:#60a5fa;--accent2:#3b82f6;--accent-light:#eff6ff;--warn:#c9a227;--danger:#b42318}*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}img{max-width:100%;height:auto}a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}header{position:sticky;top:0;background:#ffffffee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:10}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:-.03em;font-size:20px;white-space:nowrap}.nav-links{display:flex;gap:22px;font-size:14px;color:#41505a;align-items:center}.nav-links a:hover{color:var(--accent)}.nav-actions{display:flex;align-items:center;gap:10px}.menu-toggle{display:none;background:#fff;border:1px solid var(--line);border-radius:9px;width:42px;height:42px;font-size:23px;line-height:1;cursor:pointer;color:var(--ink)}.lang-switch{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px 11px;font-size:12px;font-weight:700;cursor:pointer;color:var(--accent)}.lang-switch:hover{background:var(--accent);color:#fff;border-color:var(--accent)}.btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;border:0;cursor:pointer;text-align:center}.btn:hover{background:var(--accent2)}.btn.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}.btn.small{padding:8px 14px;font-size:13px}.hero{padding:86px 0 70px;background:linear-gradient(135deg,#eff6ff,#fff)}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800;color:var(--accent)}h1{font-size:clamp(42px,6vw,70px);line-height:1.02;letter-spacing:-.055em;margin:14px 0 20px;overflow-wrap:anywhere}h2{font-size:34px;letter-spacing:-.04em;margin:0 0 10px}h3{margin:0 0 8px}.lead{font-size:19px;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.profile-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 18px 50px #13212b14;min-width:0}.avatar{width:100%;max-width:360px;height:auto;aspect-ratio:auto;border-radius:12px;background:var(--accent-light);display:grid;place-items:center;color:var(--accent);font-size:30px;font-weight:800;margin-bottom:20px}img.avatar{object-fit:contain;display:block!important;background:none!important}.badge{display:inline-block;background:var(--accent-light);color:var(--accent);padding:5px 9px;border-radius:999px;font-size:12px;font-weight:800}section{padding:76px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}.section-head p{color:var(--muted);max-width:620px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:25px;transition:transform .2s,box-shadow .2s;min-width:0}.card:hover{transform:translateY(-3px);box-shadow:0 12px 40px #13212b10}.icon{font-size:26px;margin-bottom:14px}.card p{color:var(--muted);font-size:15px;overflow-wrap:anywhere}.arrow{color:var(--accent);font-weight:800}.about{background:#fff}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.facts{display:grid;gap:12px}.fact{padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}.cta{background:#1e40af;color:#fff;border-radius:24px;padding:45px}.cta p{color:#dbeafe}.cta .btn{background:#fff;color:var(--accent2)}footer{padding:35px 0;color:#6a777d;font-size:13px;border-top:1px solid var(--line)}.footer-grid{display:flex;justify-content:space-between;gap:20px}.disclaimer{font-size:12px;color:#7a858a;margin-top:25px}
+  
+/* Calculadoras */
+.calc-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.calc-card h3{font-size:18px;margin-bottom:14px;color:var(--accent)}
+.calc-card label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:10px 0 4px}
+.calc-card input,.calc-card select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit}
+.calc-card input:focus,.calc-card select:focus{outline:none;border-color:var(--accent)}
+.calc-card input[type="checkbox"]{width:auto;margin:0 7px 0 0;accent-color:var(--accent)}
+.check-row{display:flex!important;align-items:flex-start;gap:2px;font-weight:500!important;color:var(--ink)!important}
+.calc-result{background:var(--accent-light);border-radius:12px;padding:14px;margin-top:14px;font-size:15px}
+.calc-result strong{color:var(--accent);font-size:18px}
+.calc-ref{font-size:11px;color:#8899a0;margin-top:8px}
+.hidden{display:none}
+
+/* Tabs */
+.tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab-btn{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:13px;font-weight:600;color:var(--muted)}
+.tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* Alertas */
+.alert-info{background:#dbeafe;border-left:4px solid var(--accent);padding:12px 16px;border-radius:0 10px 10px 0;font-size:13px;color:var(--ink);margin:14px 0}
+@media(max-width:900px){.nav{flex-wrap:wrap;padding:12px 0}.menu-toggle{display:block}.nav-links{display:none;order:3;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0 12px;border-top:1px solid var(--line)}.nav-links.open{display:flex}.nav-links a{padding:10px 4px}.nav-actions .btn{display:none}.hero-grid,.about-grid{grid-template-columns:1fr;gap:34px}.grid{grid-template-columns:1fr}.hero{padding:55px 0}.section-head{display:block}.footer-grid{flex-direction:column}.tabs{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;padding:2px 2px 10px;scrollbar-width:thin}.tab-btn{flex:0 0 auto}.profile-card{max-width:620px}}
+@media(max-width:560px){.container{width:min(100% - 28px,1120px)}.nav{gap:10px}.brand{font-size:16px}.nav-actions{gap:6px}.lang-switch{padding:7px 9px}.hero{padding:42px 0 46px}h1{font-size:clamp(34px,11vw,46px);letter-spacing:-.045em}.lead{font-size:17px}.actions{display:grid;grid-template-columns:1fr}.actions .btn{width:100%}section{padding:50px 0}h2{font-size:29px}.profile-card,.card,.calc-card{padding:20px;border-radius:15px}.profile-card h3{font-size:23px!important}.avatar{width:100%;height:auto}.cta{padding:28px 20px;border-radius:18px}.calc-card input,.calc-card select{font-size:16px;padding:12px}.calc-card .btn.small{width:100%;padding:12px;margin-top:16px!important}.calc-result{overflow-wrap:anywhere}.alert-info{padding:11px 12px}.tabs{margin-left:-2px;margin-right:-2px}.footer-grid{gap:8px}}
+</style>
+
+<style>
+ [hidden]{display:none!important} section[id],details[id]{scroll-margin-top:110px}.audiences{display:flex;gap:10px;margin:26px 0 18px;flex-wrap:wrap}.calculator{margin:12px 0;border:1px solid var(--line);border-radius:16px;background:white;overflow:hidden}.calculator>summary{cursor:pointer;padding:20px 24px;font-weight:750;list-style:none;position:relative;padding-right:50px}.calculator>summary::after{content:'+';position:absolute;right:24px;top:20px;font-size:22px;color:#1e40af}.calculator[open]>summary::after{content:'−'}.calculator>summary small{display:block;color:var(--muted);font-size:12px;font-weight:400;margin-top:4px}.calculator .calc-card{border:0;border-top:1px solid var(--line);border-radius:0}.calculator .calc-ref{font-size:13px;color:#52626c;line-height:1.65}.calculator .calc-ref a{color:#1e40af;text-decoration:underline}.calculator .calc-result strong{color:#1e40af!important}.calculator .btn,.audiences .active{background:#1e40af;color:white}.calculator .secondary{background:white;color:#1e40af;border-color:#1e40af}.calculator input,.calculator select{max-width:560px;display:block}.calculator input[type=checkbox]{display:inline}.calculator label{color:#41505a;font-size:14px}.tool-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.tool-actions a{color:#1e40af;text-decoration:underline;align-self:center;font-size:14px}.calculator progress{width:100%;accent-color:#1e40af}.reference-box{border-top:1px solid var(--line);margin-top:22px;padding-top:12px}.error{color:#b42318;font-weight:600}.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.feature-grid a{display:block}.content-link{margin-top:24px}.content-link .btn,.channel .btn{background:#1e40af}.channel{background:var(--accent-light)}.channel .container{display:flex;justify-content:space-between;align-items:center;gap:30px}.channel p{max-width:620px;color:var(--muted)}.skip-link{position:fixed;top:-100px;left:12px;background:white;padding:12px;z-index:100}.skip-link:focus{top:10px}:focus-visible{outline:3px solid #1e40af!important;outline-offset:4px}.mobile-contact{display:none}.privacy{font-size:13px;color:#52626c}.page-heading{font-size:clamp(32px,5vw,52px);max-width:850px}.back-link{display:inline-block;margin-bottom:22px;color:#1e40af;text-decoration:underline}@media(max-width:600px){.feature-grid{grid-template-columns:1fr}.channel .container{display:block}.calculator>summary{padding:18px 45px 18px 18px}.mobile-contact{display:block;position:fixed;bottom:0;left:0;right:0;padding:10px;background:#ffffffee;border-top:1px solid var(--line);z-index:20;text-align:center;padding-bottom:max(10px,env(safe-area-inset-bottom))}.mobile-contact a{color:#1e40af;font-weight:750;display:block;min-height:28px}body{padding-bottom:70px}.tool-actions{display:grid}.calculator .tool-actions .btn.small{margin-top:0!important}.calc-card{padding:18px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}</style><meta property="og:type" content="website"><meta property="og:title" content="Dr. Gabriel C. de Sena — Saúde e calculadoras médicas"><meta property="og:description" content="Consultas, ferramentas para o dia a dia e conteúdo para estudantes e profissionais da saúde."><meta property="og:image" content="Imagens/foto.perfil.jpeg"><meta property="og:image:alt" content="Dr. Gabriel C. de Sena"><meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Dr. Gabriel C. de Sena"><meta name="twitter:description" content="Saúde, calculadoras médicas e conteúdo educativo."><meta name="twitter:image" content="Imagens/foto.perfil.jpeg"><style>/* Navegação sempre visível, inclusive no celular. */
+html,body{overflow-x:clip}
+@media(max-width:900px){
+ header .nav{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;padding:10px 0}
+ header .brand{white-space:normal;line-height:1.25;min-width:0}
+ header .nav-actions{grid-column:2;grid-row:1}
+ header .menu-toggle{display:none!important}
+ header .nav-links,header .nav-links.open{display:flex!important;grid-column:1 / -1;grid-row:2;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 14px;width:100%;padding:6px 0 0;border-top:1px solid var(--line)}
+ header .nav-links a{padding:8px 2px;font-size:14px;line-height:1.4;min-height:36px}
+ section[id],details[id]{scroll-margin-top:140px}
+}
+@media(max-width:360px){header .brand{font-size:15px}header .nav-links{gap:4px 10px}header .nav-links a{font-size:13px}}
+</style><style>
+/* Consulta médica ocupa toda a largura disponível. */
+#consultas .grid{grid-template-columns:minmax(0,1fr)}
+</style>
+</head>
+  
+<body><a data-pt="Pular para o conteúdo" data-es="Saltar al contenido" class="skip-link" href="#principal">Pular para o conteúdo</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">Dr. Gabriel C. de Sena</a>
+    <nav class="nav-links" id="mainNav"><a href="#ferramentas">Calculadoras</a><a href="conteudo-medico.html" data-pt="Conteúdo médico" data-es="Contenido médico">Conteúdo médico</a><a href="https://wa.me/5511994269621" data-pt="Contato" data-es="Contacto" target="_blank" rel="noopener noreferrer">Contato</a></nav>
+    <div class="nav-actions">
+      <button class="lang-switch" onclick="toggleLang()" id="langBtn" type="button">ES</button>
+      <a class="btn" href="https://wa.me/5511994269621" id="heroBtn" data-pt="Agendar" data-es="Agendar" target="_blank" rel="noopener noreferrer">Agendar</a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker" data-pt="Medicina • Informação • Cuidado" data-es="Medicina • Información • Cuidado">Medicina • Informação • Cuidado</div>
+      <h1 data-pt="Medicina baseada em evidências, de forma clara e objetiva." data-es="Medicina basada en evidencias, de forma clara y objetiva.">Medicina baseada em evidências, de forma clara e objetiva.</h1>
+      <p class="lead" data-pt="Atendimento médico e conteúdo de saúde apresentados com linguagem acessível, responsabilidade e foco no que realmente importa." data-es="Atención médica y contenido de salud presentados con lenguaje accesible, responsabilidad y enfoque en lo que realmente importa.">Atendimento médico e conteúdo de saúde apresentados com linguagem acessível, responsabilidade e foco no que realmente importa.</p>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/5511994269621" data-pt="Agendar consulta" data-es="Agendar consulta" target="_blank" rel="noopener noreferrer">Agendar consulta</a>
+        <a class="btn secondary" href="conteudo-medico.html" data-pt="Conhecer o conteúdo" data-es="Conocer el contenido">Conhecer o conteúdo</a>
+      </div>
+    </div>
+    <div class="profile-card">
+      <img class="avatar" src="Imagens/foto.perfil.jpeg" alt="Dr. Gabriel De Sena" decoding="async" fetchpriority="high">
+      <span class="badge" data-pt="MÉDICO CLÍNICO GERAL" data-es="MÉDICO CLÍNICO GENERAL">MÉDICO CLÍNICO GERAL</span>
+      <h3 style="font-size:28px;margin-top:16px">Dr. Gabriel C. de Sena</h3>
+      <p style="color:var(--muted)" data-pt="Brasil / Argentina" data-es="Brasil / Argentina">Brasil / Argentina</p>
+      <p data-pt="Atendimento médico, educação em saúde e ferramentas digitais para facilitar o acesso à informação de qualidade." data-es="Atención médica, educación en salud y herramientas digitales para facilitar el acceso a información de calidad.">Atendimento médico, educação em saúde e ferramentas digitais para facilitar o acesso à informação de qualidade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTAS -->
+<!-- CONTEÚDO -->
+
+
+<!-- FERRAMENTAS / CALCULADORAS -->
+<!-- ESTUDOS (resumo na home) -->
+
+
+<!-- CONTATO -->
+
+
+<section id="consultas">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker" data-pt="Atendimento" data-es="Atención">Atendimento</div>
+        <h2 data-pt="Consultas" data-es="Consultas">Consultas</h2>
+      </div>
+      <p data-pt="Atendimento disponível para o cuidado da sua saúde." data-es="Atención disponible para el cuidado de su salud.">Atendimento disponível para o cuidado integral da sua saúde.</p>
+    </div>
+    <div class="grid">
+       <a href="https://wa.me/5511994269621" target="_blank" class="card" style="display:block" rel="noopener noreferrer">
+  <div class="icon">🩺</div>
+  <h3 data-pt="Consulta médica" data-es="Consulta médica">Consulta médica</h3>
+  <p data-pt="Avaliação clínica completa e acompanhamento de doenças e condições de saúde. Atendimento presencial e por telemedicina. Enfoque individualizado e estratégias para alcançar seus objetivos de treino, composição corporal, cuidados com a pele e saúde sexual. Sempre com segurança, cuidado e supervisão médico de perto." data-es="Evaluación clínica integral y seguimiento de enfermedades y afecciones de salud. Consultas presenciales y por telemedicina. Enfoque y estrategias personalizadas para alcanzar tus objetivos de entrenamiento, composición corporal, cuidado de la piel y salud sexual. Siempre con seguridad, cuidado y supervisión médica cercana.">
+    Avaliação clínica completa e acompanhamento de doenças e condições de saúde. Atendimento presencial e por telemedicina. Enfoque individualizado e estratégias para alcançar seus objetivos de treino, composição corporal, cuidados com a pele e saúde sexual. Sempre com segurança, cuidadp e supervisão médico de perto.
+  </p>
+  <span class="arrow" data-pt="Clique aqui →" data-es="Haga clic aquí →">
+    Clique aqui →
+  </span>
+</a>
+</div></div></section>
+
+<section id="conteudo" class="about"><div class="container"><div class="kicker" data-pt="Aprendizado" data-es="Aprendizaje">Aprendizado</div><h2 data-pt="Área dedicada a estudantes e profissionais da saúde" data-es="Área dedicada a estudiantes y profesionales de la salud">Área dedicada a estudantes e profissionais da saúde</h2><p data-pt="Aulas, materiais de apoio e questões para acompanhar seus estudos." data-es="Clases, materiales de apoyo y preguntas para acompañar sus estudios.">Aulas, materiais de apoio e questões para acompanhar seus estudos.</p><div class="content-link"><a class="btn" href="conteudo-medico.html" data-pt="Acessar conteúdo médico →" data-es="Acceder al contenido médico →">Acessar conteúdo médico →</a></div></div></section><section class="channel" id="videos"><div class="container"><div><div class="kicker">YouTube · @gabrielcdesena</div><h2 data-pt="Canal de vídeos" data-es="Canal de videos">Canal de vídeos</h2><p data-pt="Acompanhe meu canal no YouTube e explore os vídeos disponíveis." data-es="Acompañe mi canal en YouTube y explore los videos disponibles.">Acompanhe meu canal no YouTube e explore os vídeos disponíveis.</p></div><a class="btn" href="https://www.youtube.com/@gabrielcdesena" data-pt="Acessar canal no YouTube ↗" data-es="Visitar canal en YouTube ↗" target="_blank" rel="noopener noreferrer">Acessar canal no YouTube ↗</a></div></section><section id="ferramentas">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker" data-pt="Ferramentas" data-es="Herramientas">Ferramentas</div>
+        <h2 data-pt="Calculadoras médicas" data-es="Calculadoras médicas">Calculadoras médicas</h2>
+      </div>
+      <p data-pt="Escolha uma ferramenta, preencha os dados e conheça o método utilizado." data-es="Elija una herramienta, complete los datos y conozca el método utilizado.">Escolha uma ferramenta, preencha os dados e conheça o método utilizado.</p>
+    </div>
+
+    <div class="alert-info" data-pt="⚠️ As calculadoras deste site têm finalidade estritamente educativa e informativa. Não substituem avaliação médica individualizada. Sempre consulte um profissional de saúde." data-es="⚠️ Las calculadoras de este sitio tienen finalidad estrictamente educativa e informativa. No sustituyen evaluación médica individualizada. Siempre consulte a un profesional de salud.">⚠️ As calculadoras deste site têm finalidade estritamente educativa e informativa. Não substituem avaliação médica individualizada. Sempre consulte um profissional de saúde.</div>
+
+    
+
+    <!-- IMC -->
+    <div class="audiences" role="group" aria-label="Calculadoras"><button type="button" class="tab-btn active" data-audience="daily" aria-pressed="true" data-pt="Dia a dia" data-es="Día a día">Dia a dia</button><button type="button" class="tab-btn" data-audience="pro" aria-pressed="false" data-pt="Profissional" data-es="Profesional">Profissional</button></div><details id="tab-imc" class="calculator" data-audience="daily"><summary><span data-pt="Meu peso está adequado para minha altura?" data-es="¿Mi peso es adecuado para mi altura?">Meu peso está adequado para minha altura?</span><small data-pt="IMC (Índice de Massa Corporal)" data-es="IMC (Índice de Massa Corporal)">IMC (Índice de Massa Corporal)</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Peso (kg)" data-es="Peso (kg)" for="imc-peso">Peso (kg)</label>
+        <input type="number" id="imc-peso" step="any" placeholder="Ex: 70" required="" min="20" max="350">
+        <label data-pt="Altura (m)" data-es="Altura (m)" for="imc-alt">Altura (m)</label>
+        <input type="number" id="imc-alt" step="any" placeholder="Ex: 1.75" required="" min="1.2" max="2.3">
+        <button class="btn small" onclick="calcIMC()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="imc-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Fórmula: IMC = peso (kg) ÷ altura² (m). Classificação de adultos: &lt;18,5 baixo peso; 18,5–24,9 faixa usual; 25–29,9 sobrepeso; ≥30 obesidade. Não avalia diretamente gordura ou músculos; não usar a classificação em crianças ou gestantes." data-es="Fórmula: IMC = peso (kg) ÷ altura² (m). Adultos: &lt;18,5 bajo peso; 18,5–24,9 rango habitual; 25–29,9 sobrepeso; ≥30 obesidad. No mide directamente grasa o músculo; no aplicar a niños o embarazadas." class="calc-ref">Fórmula: IMC = peso (kg) ÷ altura² (m). Classificação de adultos: &lt;18,5 baixo peso; 18,5–24,9 faixa usual; 25–29,9 sobrepeso; ≥30 obesidade. Não avalia diretamente gordura ou músculos; não usar a classificação em crianças ou gestantes.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener noreferrer">OMS — obesidade</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-imc">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-imc" data-share="tab-imc">Link desta calculadora</a></div></div></details>
+
+    <!-- Superfície Corporal -->
+    <details id="tab-sc" class="calculator" data-audience="pro" hidden=""><summary><span data-pt="Superfície Corporal — DuBois &amp; DuBois" data-es="Superfície Corporal — DuBois &amp; DuBois">Superfície Corporal — DuBois &amp; DuBois</span><small data-pt="Superfície Corporal — DuBois &amp; DuBois" data-es="Superfície Corporal — DuBois &amp; DuBois">Superfície Corporal — DuBois &amp; DuBois</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Peso (kg)" data-es="Peso (kg)" for="sc-peso">Peso (kg)</label>
+        <input type="number" id="sc-peso" step="any" placeholder="Ex: 70" required="" min="20" max="350">
+        <label data-pt="Altura (cm)" data-es="Altura (cm)" for="sc-alt">Altura (cm)</label>
+        <input type="number" id="sc-alt" placeholder="Ex: 175" required="" step="any" min="120" max="230">
+        <button class="btn small" onclick="calcSC()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="sc-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="DuBois &amp; DuBois (1916): SC (m²) = 0,007184 × peso(kg)^0,425 × altura(cm)^0,725. Estimativa; extremos corporais e decisões de dose exigem avaliação profissional." data-es="DuBois &amp; DuBois (1916): SC (m²) = 0,007184 × peso(kg)^0,425 × altura(cm)^0,725. Estimación; extremos corporales y dosificación requieren evaluación profesional." class="calc-ref">DuBois &amp; DuBois (1916): SC (m²) = 0,007184 × peso(kg)^0,425 × altura(cm)^0,725. Estimativa; extremos corporais e decisões de dose exigem avaliação profissional.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://doi.org/10.1001/archinte.1916.00080130010002" target="_blank" rel="noopener noreferrer">Publicação original</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-sc">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-sc" data-share="tab-sc">Link desta calculadora</a></div></div></details>
+
+    <!-- Água Corporal Total -->
+    <!-- Necessidade Hídrica Diária -->
+    <details id="tab-agua" class="calculator" data-audience="daily"><summary><span data-pt="Quanto de água preciso por dia?" data-es="¿Cuánta agua necesito por día?">Quanto de água preciso por dia?</span><small data-pt="Necessidade Diária de Água e Líquidos" data-es="Necessidade Diária de Água e Líquidos">Necessidade Diária de Água e Líquidos</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Peso (kg)" data-es="Peso (kg)" for="agua-peso">Peso (kg)</label>
+        <input type="number" id="agua-peso" min="20" max="350" step="any" placeholder="Ex: 70" required="">
+        <label data-pt="Altura (cm)" data-es="Altura (cm)" for="agua-altura">Altura (cm)</label>
+        <input type="number" id="agua-altura" min="120" max="230" step="any" placeholder="Ex: 175" required="">
+        <label data-pt="Sexo usado para estimar o peso ideal" data-es="Sexo utilizado para estimar el peso ideal" for="agua-sexo">Sexo usado para estimar o peso ideal</label>
+        <select id="agua-sexo">
+          <option value="m" data-pt="Masculino" data-es="Masculino">Masculino</option>
+          <option value="f" data-pt="Feminino" data-es="Femenino">Feminino</option>
+        </select>
+        <label data-pt="Tempo de exercício no dia (minutos)" data-es="Tiempo de ejercicio en el día (minutos)" for="agua-exercicio">Tempo de exercício no dia (minutos)</label>
+        <input type="number" id="agua-exercicio" min="0" max="720" step="any" value="0" placeholder="Ex: 60" required="">
+        <label data-pt="Condição do exercício" data-es="Condición del ejercicio" for="agua-condicao">Condição do exercício</label>
+        <select id="agua-condicao">
+          <option value="normal" data-pt="Clima ameno / suor habitual" data-es="Clima templado / sudor habitual">Clima ameno / suor habitual</option>
+          <option value="quente" data-pt="Calor, umidade ou suor intenso" data-es="Calor, humedad o sudor intenso">Calor, umidade ou suor intenso</option>
+        </select>
+        <button class="btn small" onclick="calcAguaDiaria()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="agua-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Estimativa prática, não uma equação universal validada: 30–35 mL/kg/dia; exercício: 0,4–0,8 L/h (0,6–0,8 no calor). Em IMC ≥30, mantém-se a aproximação anterior: peso ajustado = peso Devine + 0,33 × (peso atual − peso Devine). Devine: 50 kg (homens) ou 45,5 kg (mulheres) + 2,3 × polegadas acima de 60; abaixo disso, incremento zero. Esse ajuste não é uma recomendação universal de hidratação. EFSA usa referências populacionais de água total, incluindo alimentos, e não valida essa combinação. Não force ingestão nem ganhe peso durante exercício; perdas por suor variam. Doença renal/cardíaca, cirrose, gestação e lactação exigem individualização." data-es="Estimación práctica, no una ecuación universal validada: 30–35 mL/kg/día; ejercicio: 0,4–0,8 L/h (0,6–0,8 con calor). Con IMC ≥30: peso ajustado = peso Devine + 0,33 × (peso actual − peso Devine). Devine: 50 kg (hombres) o 45,5 kg (mujeres) + 2,3 × pulgadas por encima de 60; por debajo, incremento cero. Este ajuste no es una recomendación universal. EFSA utiliza referencias poblacionales de agua total, incluidos alimentos, y no valida esta combinación. No fuerce ingesta ni aumente de peso al ejercitarse. Enfermedad renal/cardíaca, cirrosis, embarazo y lactancia requieren individualización." class="calc-ref">Estimativa prática, não uma equação universal validada: 30–35 mL/kg/dia; exercício: 0,4–0,8 L/h (0,6–0,8 no calor). Em IMC ≥30, mantém-se a aproximação anterior: peso ajustado = peso Devine + 0,33 × (peso atual − peso Devine). Devine: 50 kg (homens) ou 45,5 kg (mulheres) + 2,3 × polegadas acima de 60; abaixo disso, incremento zero. Esse ajuste não é uma recomendação universal de hidratação. EFSA usa referências populacionais de água total, incluindo alimentos, e não valida essa combinação. Não force ingestão nem ganhe peso durante exercício; perdas por suor variam. Doença renal/cardíaca, cirrose, gestação e lactação exigem individualização.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.efsa.europa.eu/en/efsajournal/pub/1459" target="_blank" rel="noopener noreferrer">EFSA — água total</a> · <a href="https://doi.org/10.1249/mss.0b013e31802ca597" target="_blank" rel="noopener noreferrer">ACSM — exercício e reposição de líquidos</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-agua">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-agua" data-share="tab-agua">Link desta calculadora</a></div></div></details>
+
+    <!-- TFG CKD-EPI 2021 -->
+    <details id="tab-tfg" class="calculator" data-audience="pro" hidden=""><summary><span data-pt="TFG Estimada — CKD-EPI Creatinina 2021 (sem raça)" data-es="TFG Estimada — CKD-EPI Creatinina 2021 (sem raça)">TFG Estimada — CKD-EPI Creatinina 2021 (sem raça)</span><small data-pt="TFG Estimada — CKD-EPI Creatinina 2021 (sem raça)" data-es="TFG Estimada — CKD-EPI Creatinina 2021 (sem raça)">TFG Estimada — CKD-EPI Creatinina 2021 (sem raça)</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Creatinina sérica (mg/dL)" data-es="Creatinina sérica (mg/dL)" for="tfg-cr">Creatinina sérica (mg/dL)</label>
+        <input type="number" id="tfg-cr" step="any" placeholder="Ex: 1,1" required="" min=".1" max="30">
+        <label data-pt="Idade (anos)" data-es="Edad (años)" for="tfg-idade">Idade (anos)</label>
+        <input type="number" id="tfg-idade" placeholder="Ex: 45" required="" step="1" min="18" max="120">
+        <label data-pt="Sexo" data-es="Sexo" for="tfg-sexo">Sexo</label>
+        <select id="tfg-sexo">
+          <option value="m" data-pt="Masculino" data-es="Masculino">Masculino</option>
+          <option value="f" data-pt="Feminino" data-es="Femenino">Feminino</option>
+        </select>
+        <button class="btn small" onclick="calcTFG()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="tfg-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="CKD-EPI creatinina 2021: 142 × min(Cr/κ,1)^α × max(Cr/κ,1)^−1,200 × 0,9938^idade × 1,012 (mulheres). κ=0,7/0,9 e α=−0,241/−0,302 (mulheres/homens); Cr em mg/dL. Sem coeficiente racial. Adultos com creatinina estável; não diagnostica DRC isoladamente, que exige cronicidade e/ou marcadores de lesão renal. Cistatina C pode melhorar precisão." data-es="CKD-EPI creatinina 2021: 142 × min(Cr/κ,1)^α × max(Cr/κ,1)^−1,200 × 0,9938^edad × 1,012 (mujeres). κ=0,7/0,9 y α=−0,241/−0,302 (mujeres/hombres); Cr en mg/dL. Sin coeficiente racial. Adultos con creatinina estable; no diagnostica ERC por sí sola. Cistatina C puede mejorar precisión." class="calc-ref">CKD-EPI creatinina 2021: 142 × min(Cr/κ,1)^α × max(Cr/κ,1)^−1,200 × 0,9938^idade × 1,012 (mulheres). κ=0,7/0,9 e α=−0,241/−0,302 (mulheres/homens); Cr em mg/dL. Sem coeficiente racial. Adultos com creatinina estável; não diagnostica DRC isoladamente, que exige cronicidade e/ou marcadores de lesão renal. Cistatina C pode melhorar precisão.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://doi.org/10.1056/NEJMoa2102953" target="_blank" rel="noopener noreferrer">Inker et al., 2021</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-tfg">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-tfg" data-share="tab-tfg">Link desta calculadora</a></div></div></details>
+
+    <!-- Clearance de Creatinina -->
+    <details id="tab-clear" class="calculator" data-audience="pro" hidden=""><summary><span data-pt="Clearance de Creatinina — Cockcroft-Gault" data-es="Clearance de Creatinina — Cockcroft-Gault">Clearance de Creatinina — Cockcroft-Gault</span><small data-pt="Clearance de Creatinina — Cockcroft-Gault" data-es="Clearance de Creatinina — Cockcroft-Gault">Clearance de Creatinina — Cockcroft-Gault</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Peso (kg)" data-es="Peso (kg)" for="cg-peso">Peso (kg)</label>
+        <input type="number" id="cg-peso" step="any" placeholder="Ex: 70" required="" min="20" max="350">
+        <label data-pt="Creatinina sérica (mg/dL)" data-es="Creatinina sérica (mg/dL)" for="cg-cr">Creatinina sérica (mg/dL)</label>
+        <input type="number" id="cg-cr" step="any" placeholder="Ex: 1,1" required="" min=".1" max="30">
+        <label data-pt="Idade (anos)" data-es="Edad (años)" for="cg-idade">Idade (anos)</label>
+        <input type="number" id="cg-idade" placeholder="Ex: 45" required="" step="1" min="18" max="120">
+        <label data-pt="Sexo" data-es="Sexo" for="cg-sexo">Sexo</label>
+        <select id="cg-sexo">
+          <option value="m" data-pt="Masculino" data-es="Masculino">Masculino</option>
+          <option value="f" data-pt="Feminino" data-es="Femenino">Feminino</option>
+        </select>
+        <button class="btn small" onclick="calcCG()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="cg-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Cockcroft–Gault (1976): ClCr = (140 − idade) × peso(kg) ÷ [72 × Cr(mg/dL)]; ×0,85 para mulheres. Usa o peso informado, sem ajuste automático. Não indexado por 1,73 m²; não equivale à TFG. Obesidade, baixo peso, edema, gestação e creatinina instável limitam o uso. Para dose, seguir a bula e o protocolo do medicamento." data-es="Cockcroft–Gault (1976): ClCr = (140 − edad) × peso(kg) ÷ [72 × Cr(mg/dL)]; ×0,85 para mujeres. Usa el peso ingresado, sin ajuste automático. No indexado por 1,73 m²; no equivale a TFG. Extremos corporales, edema, embarazo y creatinina inestable limitan el uso. Para dosis, seguir el prospecto y protocolo." class="calc-ref">Cockcroft–Gault (1976): ClCr = (140 − idade) × peso(kg) ÷ [72 × Cr(mg/dL)]; ×0,85 para mulheres. Usa o peso informado, sem ajuste automático. Não indexado por 1,73 m²; não equivale à TFG. Obesidade, baixo peso, edema, gestação e creatinina instável limitam o uso. Para dose, seguir a bula e o protocolo do medicamento.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://doi.org/10.1159/000180580" target="_blank" rel="noopener noreferrer">Publicação original</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-clear">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-clear" data-share="tab-clear">Link desta calculadora</a></div></div></details>
+
+    <!-- Necessidade Calórica -->
+    <details id="tab-cal" class="calculator" data-audience="daily"><summary><span data-pt="Quantas calorias preciso por dia?" data-es="¿Cuántas calorías necesito por día?">Quantas calorias preciso por dia?</span><small data-pt="Necessidade Calórica Diária — Mifflin-St Jeor" data-es="Necessidade Calórica Diária — Mifflin-St Jeor">Necessidade Calórica Diária — Mifflin-St Jeor</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Peso (kg)" data-es="Peso (kg)" for="cal-peso">Peso (kg)</label>
+        <input type="number" id="cal-peso" step="any" placeholder="Ex: 70" required="" min="20" max="350">
+        <label data-pt="Altura (cm)" data-es="Altura (cm)" for="cal-alt">Altura (cm)</label>
+        <input type="number" id="cal-alt" placeholder="Ex: 175" required="" step="any" min="120" max="230">
+        <label data-pt="Idade (anos)" data-es="Edad (años)" for="cal-idade">Idade (anos)</label>
+        <input type="number" id="cal-idade" placeholder="Ex: 30" required="" step="1" min="18" max="120">
+        <label data-pt="Sexo" data-es="Sexo" for="cal-sexo">Sexo</label>
+        <select id="cal-sexo">
+          <option value="m" data-pt="Masculino" data-es="Masculino">Masculino</option>
+          <option value="f" data-pt="Feminino" data-es="Femenino">Feminino</option>
+        </select>
+        <label data-pt="Nível de atividade" data-es="Nivel de actividad" for="cal-atv">Nível de atividade</label>
+        <select id="cal-atv">
+          <option value="1.2" data-pt="Sedentário" data-es="Sedentario">Sedentário</option>
+          <option value="1.375" data-pt="Levemente ativo" data-es="Ligeramente activo">Levemente ativo</option>
+          <option value="1.55" data-pt="Moderadamente ativo" data-es="Moderadamente activo">Moderadamente ativo</option>
+          <option value="1.725" data-pt="Muito ativo" data-es="Muy activo">Muito ativo</option>
+          <option value="1.9" data-pt="Extremamente ativo" data-es="Extremadamente activo">Extremamente ativo</option>
+        </select>
+        <button class="btn small" onclick="calcCal()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="cal-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Mifflin–St Jeor (1990): gasto de repouso = 10 × peso(kg) + 6,25 × altura(cm) − 5 × idade + 5 (homens) ou −161 (mulheres). Gasto diário = repouso × fator de atividade selecionado (1,2–1,9). Esses fatores são aproximações adicionais, não parte da equação original; não determinam uma dieta ou déficit ideal. Adultos não gestantes." data-es="Mifflin–St Jeor (1990): gasto en reposo = 10 × peso(kg) + 6,25 × altura(cm) − 5 × edad + 5 (hombres) o −161 (mujeres). Gasto diario = reposo × factor de actividad (1,2–1,9). Los factores son aproximaciones adicionales, no parte de la ecuación original; no determinan una dieta o déficit ideal. Adultos no embarazadas." class="calc-ref">Mifflin–St Jeor (1990): gasto de repouso = 10 × peso(kg) + 6,25 × altura(cm) − 5 × idade + 5 (homens) ou −161 (mulheres). Gasto diário = repouso × fator de atividade selecionado (1,2–1,9). Esses fatores são aproximações adicionais, não parte da equação original; não determinam uma dieta ou déficit ideal. Adultos não gestantes.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://pubmed.ncbi.nlm.nih.gov/2305711/" target="_blank" rel="noopener noreferrer">Mifflin et al.</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-cal">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-cal" data-share="tab-cal">Link desta calculadora</a></div></div></details>
+
+    <!-- Pacotes-Ano -->
+    <details id="tab-proteina" class="calculator" data-audience="daily"><summary><span data-pt="Quanto de proteína preciso por dia?" data-es="¿Cuánta proteína necesito por día?">Quanto de proteína preciso por dia?</span><small>Proteína • g/dia</small></summary><div class="calc-card"><p class="error" role="alert"></p><label for="prot-peso" data-pt="Peso atual (kg)" data-es="Peso actual (kg)">Peso atual (kg)</label><input id="prot-peso" type="number" min="20" max="350" step="any" required="" inputmode="decimal"><label for="prot-alt" data-pt="Altura (cm)" data-es="Altura (cm)">Altura (cm)</label><input id="prot-alt" type="number" min="120" max="230" step="any" required="" inputmode="decimal"><label for="prot-perfil" data-pt="Perfil — adultos saudáveis" data-es="Perfil — adultos sanos">Perfil — adultos saudáveis</label><select id="prot-perfil"><option value="base" data-pt="18–64 anos, sem treinamento regular" data-es="18–64 años, sin entrenamiento regular">18–64 anos, sem treinamento regular</option><option value="treino" data-pt="18–64 anos, treinamento regular" data-es="18–64 años, entrenamiento regular">18–64 anos, treinamento regular</option></select><p class="privacy" data-pt="Estimativa para adultos saudáveis, não gestantes. Doença renal, hepática, edema e outras condições exigem avaliação individual. Aos 65 anos ou mais, a meta também deve ser individualizada." data-es="Estimación para adultos sanos, no embarazadas. Enfermedad renal, hepática, edema y otras condiciones requieren evaluación individual. A partir de los 65 años, la meta también debe individualizarse.">Estimativa para adultos saudáveis, não gestantes. Doença renal, hepática, edema e outras condições exigem avaliação individual. Aos 65 anos ou mais, a meta também deve ser individualizada.</p><button type="button" class="btn small" onclick="calculateNew('proteina')" data-pt="Calcular" data-es="Calcular">Calcular</button><div id="proteina-res" class="calc-result hidden" role="status" aria-live="polite"></div><div class="reference-box"><p data-pt="Proteína = peso(kg) × referência do perfil. EFSA: 0,83 g/kg/dia para adultos saudáveis sem treino regular (referência populacional, não meta esportiva). ISSN: 1,4–2,0 g/kg/dia para adultos saudáveis que treinam. Usa peso atual apenas com IMC 18,5–29,9; fora dessa faixa, orienta individualização em vez de aplicar um ajuste arbitrário. Refere-se a gramas de proteína, não ao peso de carne ou suplemento." data-es="Proteína = peso(kg) × referencia. EFSA: 0,83 g/kg/día en adultos sanos sin entrenamiento regular (referencia poblacional). ISSN: 1,4–2,0 g/kg/día en adultos sanos que entrenan. Usa peso actual solo con IMC 18,5–29,9; fuera del rango, individualizar. Gramos de proteína, no peso de carne o suplemento." class="calc-ref">Proteína = peso(kg) × referência do perfil. EFSA: 0,83 g/kg/dia para adultos saudáveis sem treino regular (referência populacional, não meta esportiva). ISSN: 1,4–2,0 g/kg/dia para adultos saudáveis que treinam. Usa peso atual apenas com IMC 18,5–29,9; fora dessa faixa, orienta individualização em vez de aplicar um ajuste arbitrário. Refere-se a gramas de proteína, não ao peso de carne ou suplemento.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.efsa.europa.eu/en/efsajournal/pub/2557" target="_blank" rel="noopener noreferrer">EFSA, 2012</a> · <a href="https://doi.org/10.1186/s12970-017-0177-8" target="_blank" rel="noopener noreferrer">ISSN, 2017</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-proteina">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-proteina" data-share="tab-proteina">Link desta calculadora</a></div></div></details><details id="tab-exercicio" class="calculator" data-audience="daily"><summary><span data-pt="Quantas calorias gasto no exercício?" data-es="¿Cuántas calorías gasto al hacer ejercicio?">Quantas calorias gasto no exercício?</span><small>MET • Compendium 2024</small></summary><div class="calc-card"><p class="error" role="alert"></p><label for="ex-peso" data-pt="Peso (kg)" data-es="Peso (kg)">Peso (kg)</label><input id="ex-peso" type="number" min="20" max="350" step="any" required="" inputmode="decimal"><label for="ex-min" data-pt="Duração (minutos)" data-es="Duración (minutos)">Duração (minutos)</label><input id="ex-min" type="number" min="1" max="720" step="any" required="" inputmode="decimal"><label for="ex-met" data-pt="Atividade — estimativa para adultos de 19–59 anos" data-es="Actividad — estimación para adultos de 19–59 años">Atividade — estimativa para adultos de 19–59 anos</label><select id="ex-met"><option value="3.8" data-pt="Caminhada em plano, 4,5–5,5 km/h" data-es="Caminata en llano, 4,5–5,5 km/h">Caminhada em plano, 4,5–5,5 km/h</option><option value="4.8" data-pt="Caminhada em plano, 5,6–6,3 km/h" data-es="Caminata en llano, 5,6–6,3 km/h">Caminhada em plano, 5,6–6,3 km/h</option><option value="8.5" data-pt="Corrida, 8–8,4 km/h" data-es="Carrera, 8–8,4 km/h">Corrida, 8–8,4 km/h</option><option value="4" data-pt="Bicicleta de lazer, abaixo de 16 km/h" data-es="Bicicleta recreativa, menos de 16 km/h">Bicicleta de lazer, abaixo de 16 km/h</option><option value="3.5" data-pt="Musculação, vários exercícios de 8–15 repetições" data-es="Pesas, varios ejercicios de 8–15 repeticiones">Musculação, vários exercícios de 8–15 repetições</option><option value="6" data-pt="Musculação vigorosa" data-es="Pesas, esfuerzo vigoroso">Musculação vigorosa</option></select><button type="button" class="btn small" onclick="calculateNew('exercicio')" data-pt="Calcular" data-es="Calcular">Calcular</button><div id="exercicio-res" class="calc-result hidden" role="status" aria-live="polite"></div><div class="reference-box"><p data-pt="Gasto total (kcal) = MET × 3,5 × peso(kg) ÷ 200 × minutos. Adicional acima do repouso = (MET − 1) × 3,5 × peso ÷ 200 × minutos. METs do Compendium 2024; 1 MET equivale convencionalmente a 3,5 mL O₂/kg/min e assume-se ~5 kcal/L O₂. Médias populacionais para 19–59 anos, não uma medição individual. Condicionamento, pausas, terreno e composição corporal mudam o gasto. Não somar automaticamente ao gasto diário que já inclui atividade." data-es="Total (kcal) = MET × 3,5 × peso(kg) ÷ 200 × minutos. Adicional sobre reposo = (MET − 1) × 3,5 × peso ÷ 200 × minutos. METs del Compendium 2024; 1 MET = 3,5 mL O₂/kg/min, con ~5 kcal/L O₂. Promedios para 19–59 años, no medición individual. Pausas, terreno, condición y composición corporal modifican el gasto. No sumar automáticamente al gasto diario que ya incluye actividad." class="calc-ref">Gasto total (kcal) = MET × 3,5 × peso(kg) ÷ 200 × minutos. Adicional acima do repouso = (MET − 1) × 3,5 × peso ÷ 200 × minutos. METs do Compendium 2024; 1 MET equivale convencionalmente a 3,5 mL O₂/kg/min e assume-se ~5 kcal/L O₂. Médias populacionais para 19–59 anos, não uma medição individual. Condicionamento, pausas, terreno e composição corporal mudam o gasto. Não somar automaticamente ao gasto diário que já inclui atividade.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://pacompendium.com/walking/" target="_blank" rel="noopener noreferrer">Caminhada</a> · <a href="https://pacompendium.com/running/" target="_blank" rel="noopener noreferrer">Corrida</a> · <a href="https://pacompendium.com/bicycling/" target="_blank" rel="noopener noreferrer">Bicicleta</a> · <a href="https://pacompendium.com/conditioning-exercise/" target="_blank" rel="noopener noreferrer">Musculação</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-exercicio">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-exercicio" data-share="tab-exercicio">Link desta calculadora</a></div></div></details><details id="tab-economia" class="calculator" data-audience="daily"><summary><span data-pt="Quanto economizaria ao parar de fumar?" data-es="¿Cuánto ahorraría al dejar de fumar?">Quanto economizaria ao parar de fumar?</span><small>Cigarros • R$ / AR$</small></summary><div class="calc-card"><p class="error" role="alert"></p><label for="eco-dia" data-pt="Cigarros por dia" data-es="Cigarrillos por día">Cigarros por dia</label><input id="eco-dia" type="number" min="0" max="200" step="any" required="" inputmode="decimal"><label for="eco-pack" data-pt="Cigarros por maço" data-es="Cigarrillos por paquete">Cigarros por maço</label><input id="eco-pack" type="number" min="1" max="100" step="1" required="" inputmode="decimal"><label for="eco-preco" data-pt="Preço do maço na moeda selecionada" data-es="Precio del paquete en la moneda seleccionada">Preço do maço na moeda selecionada</label><input id="eco-preco" type="number" min="0.01" max="1000000" step="any" required="" inputmode="decimal"><label for="eco-moeda" data-pt="Moeda" data-es="Moneda">Moeda</label><select id="eco-moeda"><option value="BRL" data-pt="Reais (R$)" data-es="Reales (R$)">Reais (R$)</option><option value="ARS" data-pt="Pesos argentinos (AR$)" data-es="Pesos argentinos (AR$)">Pesos argentinos (AR$)</option></select><button type="button" class="btn small" onclick="calculateNew('economia')" data-pt="Calcular" data-es="Calcular">Calcular</button><div id="economia-res" class="calc-result hidden" role="status" aria-live="polite"></div><div class="reference-box"><p data-pt="Economia diária = (cigarros/dia ÷ cigarros/maço) × preço/maço. Mês = 30 dias; ano = 365 dias. Projeção aritmética com preço constante, sem inflação ou custos de tratamento; não requer fórmula clínica." data-es="Ahorro diario = (cigarrillos/día ÷ cigarrillos/paquete) × precio/paquete. Mes = 30 días; año = 365 días. Proyección aritmética con precio constante, sin inflación ni costos de tratamiento; no requiere fórmula clínica." class="calc-ref">Economia diária = (cigarros/dia ÷ cigarros/maço) × preço/maço. Mês = 30 dias; ano = 365 dias. Projeção aritmética com preço constante, sem inflação ou custos de tratamento; não requer fórmula clínica.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.gov.br/inca/pt-br/assuntos/causas-e-prevencao-do-cancer/tabagismo" target="_blank" rel="noopener noreferrer">INCA — parar de fumar</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-economia">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-economia" data-share="tab-economia">Link desta calculadora</a></div></div></details><details id="tab-atividade" class="calculator" data-audience="daily"><summary><span data-pt="Estou me movimentando o suficiente?" data-es="¿Me estoy moviendo lo suficiente?">Estou me movimentando o suficiente?</span><small>Atividade física • OMS / Ministério da Saúde</small></summary><div class="calc-card"><p class="error" role="alert"></p><label for="at-mod" data-pt="Minutos moderados na semana" data-es="Minutos moderados por semana">Minutos moderados na semana</label><input id="at-mod" type="number" min="0" max="10080" step="1" required="" inputmode="decimal"><label for="at-vig" data-pt="Minutos vigorosos na semana" data-es="Minutos vigorosos por semana">Minutos vigorosos na semana</label><input id="at-vig" type="number" min="0" max="10080" step="1" required="" inputmode="decimal"><label for="at-forca" data-pt="Dias de fortalecimento na semana (0–7)" data-es="Días de fortalecimiento por semana (0–7)">Dias de fortalecimento na semana (0–7)</label><input id="at-forca" type="number" min="0" max="7" step="1" required="" inputmode="decimal"><p class="privacy" data-pt="Moderada: consegue conversar, mas não cantar. Vigorosa: só consegue dizer poucas palavras sem pausar para respirar. Não conte o mesmo minuto duas vezes. Informe 0 quando não praticou. Aplicável a adultos; aos 65 anos ou mais, inclua também equilíbrio e atividades funcionais em pelo menos 3 dias da semana." data-es="Moderada: puede conversar, pero no cantar. Vigorosa: solo puede decir pocas palabras sin parar para respirar. No cuente el mismo minuto dos veces. Ingrese 0 si no practicó. Para adultos; a partir de 65 años, incluya además equilibrio y actividades funcionales al menos 3 días por semana.">Moderada: consegue conversar, mas não cantar. Vigorosa: só consegue dizer poucas palavras sem pausar para respirar. Não conte o mesmo minuto duas vezes. Informe 0 quando não praticou. Aplicável a adultos; aos 65 anos ou mais, inclua também equilíbrio e atividades funcionais em pelo menos 3 dias da semana.</p><button type="button" class="btn small" onclick="calculateNew('atividade')" data-pt="Calcular" data-es="Calcular">Calcular</button><div id="atividade-res" class="calc-result hidden" role="status" aria-live="polite"></div><div class="reference-box"><p data-pt="Minutos equivalentes = moderados + 2 × vigorosos. Adultos: pelo menos 150 min equivalentes/semana; faixa de referência OMS 150–300 min moderados ou 75–150 vigorosos. Fortalecimento dos grandes grupos musculares ≥2 dias/semana, avaliado separadamente. Não há exigência de blocos mínimos de 10 minutos; alguma atividade é melhor que nenhuma. A barra acompanha o mínimo aeróbico, não uma nota global de saúde." data-es="Minutos equivalentes = moderados + 2 × vigorosos. Adultos: al menos 150 min equivalentes/semana; referencia OMS 150–300 min moderados o 75–150 vigorosos. Fortalecimiento de grandes grupos musculares ≥2 días/semana, por separado. No exige bloques mínimos de 10 minutos; algo es mejor que nada. La barra representa el mínimo aeróbico, no la salud global." class="calc-ref">Minutos equivalentes = moderados + 2 × vigorosos. Adultos: pelo menos 150 min equivalentes/semana; faixa de referência OMS 150–300 min moderados ou 75–150 vigorosos. Fortalecimento dos grandes grupos musculares ≥2 dias/semana, avaliado separadamente. Não há exigência de blocos mínimos de 10 minutos; alguma atividade é melhor que nenhuma. A barra acompanha o mínimo aeróbico, não uma nota global de saúde.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" rel="noopener noreferrer">OMS</a> · <a href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_atividade_fisica_populacao_brasileira.pdf" target="_blank" rel="noopener noreferrer">Ministério da Saúde — Guia 2021</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-atividade">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-atividade" data-share="tab-atividade">Link desta calculadora</a></div></div></details><details id="tab-pack" class="calculator" data-audience="daily"><summary><span data-pt="Qual é minha exposição acumulada ao cigarro?" data-es="¿Cuál es mi exposición acumulada al cigarrillo?">Qual é minha exposição acumulada ao cigarro?</span><small data-pt="Pacotes-Ano de Cigarro" data-es="Pacotes-Ano de Cigarro">Pacotes-Ano de Cigarro</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Cigarros por dia" data-es="Cigarrillos por día" for="pack-dia">Cigarros por dia</label>
+        <input type="number" id="pack-dia" placeholder="Ex: 10" required="" step="any" min="0" max="200">
+        <label data-pt="Anos fumando" data-es="Años fumando" for="pack-anos">Anos fumando</label>
+        <input type="number" id="pack-anos" step="any" placeholder="Ex: 15" required="" min="0" max="110">
+        <button class="btn small" onclick="calcPack()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="pack-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Pacotes-ano = (cigarros por dia ÷ 20) × anos. Se o consumo variou, calcular cada período e somar. Não se aplica diretamente a vape ou charuto. Rastreamento depende também de idade, tempo desde cessação, condições clínicas e diretriz local; este resultado não estabelece elegibilidade." data-es="Paquetes-año = (cigarrillos por día ÷ 20) × años. Si el consumo varió, sumar los períodos. No aplicable directamente a vapeo o cigarros. El cribado depende también de edad, tiempo desde abandono, condiciones clínicas y guía local; este resultado no establece elegibilidad." class="calc-ref">Pacotes-ano = (cigarros por dia ÷ 20) × anos. Se o consumo variou, calcular cada período e somar. Não se aplica diretamente a vape ou charuto. Rastreamento depende também de idade, tempo desde cessação, condições clínicas e diretriz local; este resultado não estabelece elegibilidade.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening" target="_blank" rel="noopener noreferrer">USPSTF — critérios completos</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-pack">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-pack" data-share="tab-pack">Link desta calculadora</a></div></div></details>
+
+    <!-- Síndrome Metabólica -->
+    <details id="tab-met" class="calculator" data-audience="daily"><summary><span data-pt="Meus dados preenchem critérios de síndrome metabólica?" data-es="¿Mis datos cumplen criterios de síndrome metabólico?">Meus dados preenchem critérios de síndrome metabólica?</span><small data-pt="Síndrome Metabólica — Critérios Harmonizados" data-es="Síndrome Metabólica — Critérios Harmonizados">Síndrome Metabólica — Critérios Harmonizados</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Sexo biológico usado nos pontos de corte" data-es="Sexo biológico usado en los puntos de corte" for="met-sexo">Sexo biológico usado nos pontos de corte</label>
+        <select id="met-sexo">
+          <option value="m" data-pt="Masculino" data-es="Masculino">Masculino</option>
+          <option value="f" data-pt="Feminino" data-es="Femenino">Feminino</option>
+        </select>
+        <label data-pt="Circunferência abdominal (cm)" data-es="Circunferencia abdominal (cm)" for="met-cintura">Circunferência abdominal (cm)</label>
+        <input type="number" id="met-cintura" min="30" step="any" placeholder="Ex: 94" required="" max="250">
+        <label data-pt="Triglicerídeos (mg/dL)" data-es="Triglicéridos (mg/dL)" for="met-tg">Triglicerídeos (mg/dL)</label>
+        <input type="number" id="met-tg" min="1" step="any" placeholder="Ex: 160" required="" max="5000">
+        <label class="check-row" for="met-tg-med"><input type="checkbox" id="met-tg-med"><span data-pt="Usa medicação específica para triglicerídeos elevados" data-es="Usa medicación específica para triglicéridos elevados">Usa medicação específica para triglicerídeos elevados</span></label>
+        <label data-pt="HDL-colesterol (mg/dL)" data-es="Colesterol HDL (mg/dL)" for="met-hdl">HDL-colesterol (mg/dL)</label>
+        <input type="number" id="met-hdl" min="1" step="any" placeholder="Ex: 38" required="" max="200">
+        <label class="check-row" for="met-hdl-med"><input type="checkbox" id="met-hdl-med"><span data-pt="Usa medicação específica para HDL reduzido" data-es="Usa medicación específica para HDL reducido">Usa medicação específica para HDL reduzido</span></label>
+        <label data-pt="Pressão arterial sistólica (mmHg)" data-es="Presión arterial sistólica (mmHg)" for="met-pas">Pressão arterial sistólica (mmHg)</label>
+        <input type="number" id="met-pas" min="40" step="any" placeholder="Ex: 135" required="" max="300">
+        <label data-pt="Pressão arterial diastólica (mmHg)" data-es="Presión arterial diastólica (mmHg)" for="met-pad">Pressão arterial diastólica (mmHg)</label>
+        <input type="number" id="met-pad" min="20" step="any" placeholder="Ex: 88" required="" max="200">
+        <label class="check-row" for="met-pa-med"><input type="checkbox" id="met-pa-med"><span data-pt="Usa medicamento anti-hipertensivo" data-es="Usa medicamento antihipertensivo">Usa medicamento anti-hipertensivo</span></label>
+        <label data-pt="Glicemia de jejum (mg/dL)" data-es="Glucemia en ayunas (mg/dL)" for="met-glic">Glicemia de jejum (mg/dL)</label>
+        <input type="number" id="met-glic" min="10" step="any" placeholder="Ex: 105" required="" max="1500">
+        <label class="check-row" for="met-glic-med"><input type="checkbox" id="met-glic-med"><span data-pt="Usa medicamento para glicemia elevada/diabetes" data-es="Usa medicamento para glucemia elevada/diabetes">Usa medicamento para glicemia elevada/diabetes</span></label>
+        <button class="btn small" onclick="calcMetabolica()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="met-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Consenso harmonizado (2009): pelo menos 3 de 5 critérios — cintura ≥90/80 cm (homens/mulheres; referência provisória para América Central/Sul), TG ≥150 mg/dL, HDL &lt;40/50 mg/dL, PA sistólica ≥130 ou diastólica ≥85 mmHg, glicemia em jejum ≥100 mg/dL; tratamentos específicos também contam. Cortes de cintura variam por população. Para adultos; confirmar contexto e medidas com profissional." data-es="Consenso armonizado (2009): al menos 3 de 5 — cintura ≥90/80 cm (hombres/mujeres; referencia provisional para América Central/Sur), TG ≥150 mg/dL, HDL &lt;40/50 mg/dL, PA sistólica ≥130 o diastólica ≥85 mmHg, glucemia en ayunas ≥100 mg/dL; tratamientos específicos también cuentan. Cintura depende de población. Adultos; confirmar contexto y medidas con profesional." class="calc-ref">Consenso harmonizado (2009): pelo menos 3 de 5 critérios — cintura ≥90/80 cm (homens/mulheres; referência provisória para América Central/Sul), TG ≥150 mg/dL, HDL &lt;40/50 mg/dL, PA sistólica ≥130 ou diastólica ≥85 mmHg, glicemia em jejum ≥100 mg/dL; tratamentos específicos também contam. Cortes de cintura variam por população. Para adultos; confirmar contexto e medidas com profissional.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://doi.org/10.1161/CIRCULATIONAHA.109.192644" target="_blank" rel="noopener noreferrer">Alberti et al.</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-met">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-met" data-share="tab-met">Link desta calculadora</a></div></div></details>
+
+    <!-- Álcool -->
+    <details id="tab-alcool" class="calculator" data-audience="daily"><summary><span data-pt="Quanto álcool estou consumindo?" data-es="¿Cuánto alcohol estoy consumiendo?">Quanto álcool estou consumindo?</span><small data-pt="Quantidade de Álcool Ingerida" data-es="Quantidade de Álcool Ingerida">Quantidade de Álcool Ingerida</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Volume consumido por dia (mL)" data-es="Volumen consumido por día (mL)" for="alc-ml">Volume consumido por dia (mL)</label>
+        <input type="number" id="alc-ml" min="0" step="any" placeholder="Ex: 350" required="" max="10000">
+        <label data-pt="Graduação alcoólica da bebida (% vol.)" data-es="Graduación alcohólica de la bebida (% vol.)" for="alc-abv">Graduação alcoólica da bebida (% vol.)</label>
+        <input type="number" id="alc-abv" min="0" max="100" step="any" placeholder="Ex: 5" required="">
+        <button class="btn small" onclick="calcAlcool()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="alc-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Etanol (g) = volume(mL) × graduação(%) ÷ 100 × 0,789. Unidades de 10 g = gramas ÷ 10; a definição de dose varia entre países. Não há consumo isento de risco; não se exibe um limite seguro. Esta ferramenta não estima alcoolemia nem capacidade para dirigir." data-es="Etanol (g) = volumen(mL) × graduación(%) ÷ 100 × 0,789. Unidades de 10 g = gramos ÷ 10; la definición varía por país. No hay consumo sin riesgo; no se muestra un límite seguro. No estima alcoholemia ni aptitud para conducir." class="calc-ref">Etanol (g) = volume(mL) × graduação(%) ÷ 100 × 0,789. Unidades de 10 g = gramas ÷ 10; a definição de dose varia entre países. Não há consumo isento de risco; não se exibe um limite seguro. Esta ferramenta não estima alcoolemia nem capacidade para dirigir.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.who.int/news-room/fact-sheets/detail/alcohol" target="_blank" rel="noopener noreferrer">OMS — álcool</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-alcool">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-alcool" data-share="tab-alcool">Link desta calculadora</a></div></div></details>
+
+    <!-- Idade Gestacional -->
+    <details id="tab-ig" class="calculator" data-audience="daily"><summary><span data-pt="Quantas semanas de gravidez?" data-es="¿Cuántas semanas de embarazo?">Quantas semanas de gravidez?</span><small data-pt="Idade Gestacional — Regra de Naegele (DUM)" data-es="Idade Gestacional — Regra de Naegele (DUM)">Idade Gestacional — Regra de Naegele (DUM)</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Data da última menstruação (DUM)" data-es="Fecha de la última menstruación (FUM)" for="ig-dum">Data da última menstruação (DUM)</label>
+        <input type="date" id="ig-dum" required="">
+        <button class="btn small" onclick="calcIG()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="ig-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Idade gestacional = dias completos desde o primeiro dia da última menstruação ÷ 7. Data provável do parto = DUM + 280 dias. Pressupõe ciclo de 28 dias; ciclos irregulares, reprodução assistida e ultrassom de primeiro trimestre podem mudar a datação. Não confirma gravidez." data-es="Edad gestacional = días completos desde el primer día de la última menstruación ÷ 7. Fecha probable de parto = FUM + 280 días. Supone ciclo de 28 días; ciclos irregulares, reproducción asistida y ecografía del primer trimestre pueden cambiar la datación. No confirma embarazo." class="calc-ref">Idade gestacional = dias completos desde o primeiro dia da última menstruação ÷ 7. Data provável do parto = DUM + 280 dias. Pressupõe ciclo de 28 dias; ciclos irregulares, reprodução assistida e ultrassom de primeiro trimestre podem mudar a datação. Não confirma gravidez.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/05/methods-for-estimating-the-due-date" target="_blank" rel="noopener noreferrer">ACOG — datação gestacional</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-ig">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-ig" data-share="tab-ig">Link desta calculadora</a></div></div></details>
+
+    <!-- CHA2DS2-VASc -->
+    <details id="tab-cha2" class="calculator" data-audience="pro" hidden=""><summary><span data-pt="CHA₂DS₂-VASc — Risco de AVC em FA" data-es="CHA₂DS₂-VASc — Risco de AVC em FA">CHA₂DS₂-VASc — Risco de AVC em FA</span><small data-pt="CHA₂DS₂-VASc — Risco de AVC em FA" data-es="CHA₂DS₂-VASc — Risco de AVC em FA">CHA₂DS₂-VASc — Risco de AVC em FA</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label for="c1"><input type="checkbox" id="c1"> <span data-pt="Insuficiência cardíaca congestiva" data-es="Insuficiencia cardíaca congestiva">Insuficiência cardíaca congestiva</span> (+1)</label>
+        <label for="c2"><input type="checkbox" id="c2"> <span data-pt="Hipertensão arterial" data-es="Hipertensión arterial">Hipertensão arterial</span> (+1)</label>
+        <label for="c3"><input type="checkbox" id="c3"> <span data-pt="Idade ≥75 anos" data-es="Edad ≥75 años">Idade ≥75 anos</span> (+2)</label>
+        <label for="c4"><input type="checkbox" id="c4"> <span data-pt="Diabetes mellitus" data-es="Diabetes mellitus">Diabetes mellitus</span> (+1)</label>
+        <label for="c5"><input type="checkbox" id="c5"> <span data-pt="AVC/AIT prévio" data-es="ACV/ATA previo">AVC/AIT prévio</span> (+2)</label>
+        <label for="c6"><input type="checkbox" id="c6"> <span data-pt="Doença vascular (IAM, placa aórtica, etc.)" data-es="Enfermedad vascular (IAM, placa aórtica, etc.)">Doença vascular (IAM, placa aórtica, etc.)</span> (+1)</label>
+        <label for="c7"><input type="checkbox" id="c7"> <span data-pt="Idade 65–74 anos" data-es="Edad 65–74 años">Idade 65–74 anos</span> (+1)</label>
+        <label for="c8"><input type="checkbox" id="c8"> <span data-pt="Sexo feminino" data-es="Sexo femenino">Sexo feminino</span> (+1)</label>
+        <button class="btn small" onclick="calcCHA2()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="cha2-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="CHA₂DS₂-VASc: soma ponderada dos itens (0–9); faixas de idade são mutuamente exclusivas. Exibe também CHA₂DS₂-VA (sem sexo; 0–8), adotado pela ESC 2024. Escore para fibrilação atrial; decisão de anticoagulação depende da diretriz, valvopatia, contraindicações e avaliação individual, não apenas da soma." data-es="CHA₂DS₂-VASc: suma ponderada (0–9); edades mutuamente excluyentes. También muestra CHA₂DS₂-VA (sin sexo; 0–8), adoptado por ESC 2024. Para fibrilación auricular; anticoagulación depende de guía, valvulopatía, contraindicaciones y evaluación individual, no solo de la suma." class="calc-ref">CHA₂DS₂-VASc: soma ponderada dos itens (0–9); faixas de idade são mutuamente exclusivas. Exibe também CHA₂DS₂-VA (sem sexo; 0–8), adotado pela ESC 2024. Escore para fibrilação atrial; decisão de anticoagulação depende da diretriz, valvopatia, contraindicações e avaliação individual, não apenas da soma.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Atrial-Fibrillation" target="_blank" rel="noopener noreferrer">ESC 2024</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-cha2">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-cha2" data-share="tab-cha2">Link desta calculadora</a></div></div></details>
+
+    <!-- Wells -->
+    <details id="tab-wells" class="calculator" data-audience="pro" hidden=""><summary><span data-pt="Wells — TVP / TEP" data-es="Wells — TVP / TEP">Wells — TVP / TEP</span><small data-pt="Wells — TVP / TEP" data-es="Wells — TVP / TEP">Wells — TVP / TEP</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <div class="tabs" style="margin-bottom:16px">
+          <button class="tab-btn active" onclick="showWells('wells-tvp')" data-pt="TVP" data-es="TVP">TVP</button>
+          <button class="tab-btn" onclick="showWells('wells-tep')" data-pt="TEP" data-es="TEP">TEP</button>
+        </div>
+        <!-- TVP -->
+        <div id="wells-tvp" class="tab-content active">
+          <label for="w1"><input type="checkbox" id="w1"> <span data-pt="Câncer ativo (tratamento nos últimos 6 meses ou paliativo)" data-es="Cáncer activo (tratamiento en los últimos 6 meses o paliativo)">Câncer ativo (tratamento nos últimos 6 meses ou paliativo)</span> (+1)</label>
+          <label for="w2"><input type="checkbox" id="w2"> <span data-pt="Paralisia, paresia ou imobilização recente do membro inferior" data-es="Parálisis, paresia o inmovilización reciente del miembro inferior">Paralisia, paresia ou imobilização recente do membro inferior</span> (+1)</label>
+          <label for="w3"><input type="checkbox" id="w3"> <span data-pt="Acamado ≥3 dias ou cirurgia maior nas últimas 12 semanas" data-es="Encamado ≥3 días o cirugía mayor en las últimas 12 semanas">Acamado ≥3 dias ou cirurgia maior nas últimas 12 semanas</span> (+1)</label>
+          <label for="w4"><input type="checkbox" id="w4"> <span data-pt="Dor localizada ao longo do sistema venoso profundo" data-es="Dolor localizado a lo largo del sistema venoso profundo">Dor localizada ao longo do sistema venoso profundo</span> (+1)</label>
+          <label for="w5"><input type="checkbox" id="w5"> <span data-pt="Edema de toda a perna" data-es="Edema de toda la pierna">Edema de toda a perna</span> (+1)</label>
+          <label for="w6"><input type="checkbox" id="w6"> <span data-pt="Edema da panturrilha ≥3 cm vs lado assintomático (10 cm abaixo da tuberosidade tibial)" data-es="Edema de la pantorrilla ≥3 cm vs lado asintomático (10 cm debajo de la tuberosidad tibial)">Edema da panturrilha ≥3 cm vs lado assintomático (10 cm abaixo da tuberosidade tibial)</span> (+1)</label>
+          <label for="w7"><input type="checkbox" id="w7"> <span data-pt="Edema de fossas restrito à perna sintomática" data-es="Edema de fositas restringido a la pierna sintomática">Edema de fossas restrito à perna sintomática</span> (+1)</label>
+          <label for="w8"><input type="checkbox" id="w8"> <span data-pt="Veias colaterais superficiais (não varicosas)" data-es="Venas colaterales superficiales (no varicosas)">Veias colaterais superficiais (não varicosas)</span> (+1)</label>
+          <label for="w9"><input type="checkbox" id="w9"> <span data-pt="TVP documentada previamente" data-es="TVP documentada previamente">TVP documentada previamente</span> (+1)</label>
+          <label for="w10"><input type="checkbox" id="w10"> <span data-pt="Diagnóstico alternativo pelo menos tão provável quanto TVP" data-es="Diagnóstico alternativo al menos tan probable como TVP">Diagnóstico alternativo pelo menos tão provável quanto TVP</span> (−2)</label>
+          <button class="btn small" onclick="calcWellsTVP()" style="margin-top:12px" data-pt="Calcular TVP" data-es="Calcular TVP">Calcular TVP</button>
+          <div id="wells-tvp-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        </div>
+        <!-- TEP -->
+        <div id="wells-tep" class="tab-content">
+          <label for="wt1"><input type="checkbox" id="wt1"> <span data-pt="Sintomas de TVP (edema e dor com palpação da perna)" data-es="Síntomas de TVP (edema y dolor con palpación de la pierna)">Sintomas de TVP (edema e dor com palpação da perna)</span> (+3)</label>
+          <label for="wt2"><input type="checkbox" id="wt2"> <span data-pt="TEP tão provável ou mais provável que diagnóstico alternativo" data-es="TEP tan probable o más probable que diagnóstico alternativo">TEP tão provável ou mais provável que diagnóstico alternativo</span> (+3)</label>
+          <label for="wt3"><input type="checkbox" id="wt3"> <span data-pt="FC &gt;100 bpm" data-es="FC &gt;100 lpm">FC &gt;100 bpm</span> (+1,5)</label>
+          <label for="wt4"><input type="checkbox" id="wt4"> <span data-pt="Imobilização ≥3 dias ou cirurgia nas últimas 4 semanas" data-es="Inmovilización ≥3 días o cirugía en las últimas 4 semanas">Imobilização ≥3 dias ou cirurgia nas últimas 4 semanas</span> (+1,5)</label>
+          <label for="wt5"><input type="checkbox" id="wt5"> <span data-pt="TVP ou TEP prévio" data-es="TVP o TEP previo">TVP ou TEP prévio</span> (+1,5)</label>
+          <label for="wt6"><input type="checkbox" id="wt6"> <span data-pt="Hemoptise" data-es="Hemoptisis">Hemoptise</span> (+1)</label>
+          <label for="wt7"><input type="checkbox" id="wt7"> <span data-pt="Malignidade (tratamento ativo ou nos últimos 6 meses)" data-es="Malignidad (tratamiento activo o en los últimos 6 meses)">Malignidade (tratamento ativo ou nos últimos 6 meses)</span> (+1)</label>
+          <button class="btn small" onclick="calcWellsTEP()" style="margin-top:12px" data-pt="Calcular TEP" data-es="Calcular TEP">Calcular TEP</button>
+          <div id="wells-tep-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        </div>
+        
+      <div class="reference-box"><p data-pt="Wells: soma dos pesos exibidos. Modelo de duas categorias: TVP ≥2 provável, ≤1 improvável; TEP &gt;4 provável, ≤4 improvável. Uso profissional integrado a D-dímero e imagem; improvável não exclui doença. Não utilizar como autotriagem de sintomas urgentes." data-es="Wells: suma de los pesos indicados. Dos categorías: TVP ≥2 probable, ≤1 improbable; TEP &gt;4 probable, ≤4 improbable. Integrar con dímero D e imágenes; improbable no excluye enfermedad. No usar como autotriaje de síntomas urgentes." class="calc-ref">Wells: soma dos pesos exibidos. Modelo de duas categorias: TVP ≥2 provável, ≤1 improvável; TEP &gt;4 provável, ≤4 improvável. Uso profissional integrado a D-dímero e imagem; improvável não exclui doença. Não utilizar como autotriagem de sintomas urgentes.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.nice.org.uk/guidance/ng158/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE NG158</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-wells">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-wells" data-share="tab-wells">Link desta calculadora</a></div></div></details>
+
+    <!-- Alvarado -->
+    <details id="tab-alv" class="calculator" data-audience="pro" hidden=""><summary><span data-pt="Alvarado — Apendicite Aguda" data-es="Alvarado — Apendicite Aguda">Alvarado — Apendicite Aguda</span><small data-pt="Alvarado — Apendicite Aguda" data-es="Alvarado — Apendicite Aguda">Alvarado — Apendicite Aguda</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label for="a1"><input type="checkbox" id="a1"> <span data-pt="Migração da dor para QID" data-es="Migración del dolor a FID">Migração da dor para QID</span> (+1)</label>
+        <label for="a2"><input type="checkbox" id="a2"> <span data-pt="Anorexia" data-es="Anorexia">Anorexia</span> (+1)</label>
+        <label for="a3"><input type="checkbox" id="a3"> <span data-pt="Náuseas ou vômitos" data-es="Náuseas o vómitos">Náuseas ou vômitos</span> (+1)</label>
+        <label for="a4"><input type="checkbox" id="a4"> <span data-pt="Dor em QID (McBurney)" data-es="Dolor en FID (McBurney)">Dor em QID (McBurney)</span> (+2)</label>
+        <label for="a5"><input type="checkbox" id="a5"> <span data-pt="Rebound positivo" data-es="Rebound positivo">Rebound positivo</span> (+1)</label>
+        <label for="a6"><input type="checkbox" id="a6"> <span data-pt="Febre &gt;37,3°C" data-es="Fiebre &gt;37,3°C">Febre &gt;37,3°C</span> (+1)</label>
+        <label for="a7"><input type="checkbox" id="a7"> <span data-pt="Leucocitose &gt;10.000/mm³" data-es="Leucocitosis &gt;10.000/mm³">Leucocitose &gt;10.000/mm³</span> (+2)</label>
+        <label for="a8"><input type="checkbox" id="a8"> <span data-pt="Desvio à esquerda (&gt;75% neutrófilos)" data-es="Desviación a la izquierda (&gt;75% neutrófilos)">Desvio à esquerda (&gt;75% neutrófilos)</span> (+1)</label>
+        <button class="btn small" onclick="calcAlvarado()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="alv-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Alvarado (MANTRELS): soma ponderada 0–10. Dor em fossa ilíaca direita e leucocitose valem 2 cada; demais itens, 1. Pontuação baixa não exclui apendicite; não define cirurgia nem substitui exame, observação e imagem conforme contexto." data-es="Alvarado (MANTRELS): suma ponderada 0–10. Dolor en fosa ilíaca derecha y leucocitosis valen 2; otros, 1. Puntaje bajo no excluye apendicitis; no determina cirugía ni sustituye examen, observación e imágenes." class="calc-ref">Alvarado (MANTRELS): soma ponderada 0–10. Dor em fossa ilíaca direita e leucocitose valem 2 cada; demais itens, 1. Pontuação baixa não exclui apendicite; não define cirurgia nem substitui exame, observação e imagem conforme contexto.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://doi.org/10.1016/S0196-0644(86)80993-3" target="_blank" rel="noopener noreferrer">Alvarado, 1986</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-alv">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-alv" data-share="tab-alv">Link desta calculadora</a></div></div></details>
+
+    <!-- Glasgow -->
+    <details id="tab-gcs" class="calculator" data-audience="pro" hidden=""><summary><span data-pt="Glasgow Coma Scale (GCS)" data-es="Glasgow Coma Scale (GCS)">Glasgow Coma Scale (GCS)</span><small data-pt="Glasgow Coma Scale (GCS)" data-es="Glasgow Coma Scale (GCS)">Glasgow Coma Scale (GCS)</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="Abertura ocular" data-es="Apertura ocular" for="gcs-eye">Abertura ocular</label>
+        <select id="gcs-eye">
+          <option value="4" data-pt="4 — Espontânea" data-es="4 — Espontánea">4 — Espontânea</option>
+          <option value="3" data-pt="3 — Ao comando verbal" data-es="3 — Al comando verbal">3 — Ao comando verbal</option>
+          <option value="2" data-pt="2 — À dor" data-es="2 — Al dolor">2 — À dor</option>
+          <option value="1" data-pt="1 — Nenhuma" data-es="1 — Ninguna">1 — Nenhuma</option>
+        </select>
+        <label data-pt="Resposta verbal" data-es="Respuesta verbal" for="gcs-verbal">Resposta verbal</label>
+        <select id="gcs-verbal">
+          <option value="5" data-pt="5 — Orientado" data-es="5 — Orientado">5 — Orientado</option>
+          <option value="4" data-pt="4 — Confuso" data-es="4 — Confuso">4 — Confuso</option>
+          <option value="3" data-pt="3 — Palavras inapropriadas" data-es="3 — Palabras inapropiadas">3 — Palavras inapropriadas</option>
+          <option value="2" data-pt="2 — Sons incompreensíveis" data-es="2 — Sonidos incomprensibles">2 — Sons incompreensíveis</option>
+          <option value="1" data-pt="1 — Nenhuma" data-es="1 — Ninguna">1 — Nenhuma</option>
+        </select>
+        <label data-pt="Resposta motora" data-es="Respuesta motora" for="gcs-motor">Resposta motora</label>
+        <select id="gcs-motor">
+          <option value="6" data-pt="6 — Obedece comandos" data-es="6 — Obedece comandos">6 — Obedece comandos</option>
+          <option value="5" data-pt="5 — Localiza a dor" data-es="5 — Localiza el dolor">5 — Localiza a dor</option>
+          <option value="4" data-pt="4 — Retirada à dor" data-es="4 — Retirada al dolor">4 — Retirada à dor</option>
+          <option value="3" data-pt="3 — Flexão anormal (decorticação)" data-es="3 — Flexión anormal (descorticación)">3 — Flexão anormal (decorticação)</option>
+          <option value="2" data-pt="2 — Extensão anormal (descerebração)" data-es="2 — Extensión anormal (descerebración)">2 — Extensão anormal (descerebração)</option>
+          <option value="1" data-pt="1 — Nenhuma" data-es="1 — Ninguna">1 — Nenhuma</option>
+        </select>
+        <button class="btn small" onclick="calcGCS()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="gcs-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="Glasgow = resposta ocular (1–4) + verbal (1–5) + motora (1–6). Total 3–15 somente se todos os componentes forem testáveis; intubação, sedação e outros impedimentos devem ser documentados. Esta versão exige componentes testáveis; a gravidade do trauma não deve ser inferida fora do contexto." data-es="Glasgow = respuesta ocular (1–4) + verbal (1–5) + motora (1–6). Total 3–15 solo con todos los componentes evaluables. Intubación, sedación y otros impedimentos deben documentarse. Esta versión exige componentes evaluables; interpretar en contexto." class="calc-ref">Glasgow = resposta ocular (1–4) + verbal (1–5) + motora (1–6). Total 3–15 somente se todos os componentes forem testáveis; intubação, sedação e outros impedimentos devem ser documentados. Esta versão exige componentes testáveis; a gravidade do trauma não deve ser inferida fora do contexto.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.glasgowcomascale.org/" target="_blank" rel="noopener noreferrer">Glasgow Coma Scale</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-gcs">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-gcs" data-share="tab-gcs">Link desta calculadora</a></div></div></details>
+
+    <!-- NIHSS -->
+    <details id="tab-nih" class="calculator" data-audience="pro" hidden=""><summary><span data-pt="NIH Stroke Scale (NIHSS)" data-es="NIH Stroke Scale (NIHSS)">NIH Stroke Scale (NIHSS)</span><small data-pt="NIH Stroke Scale (NIHSS)" data-es="NIH Stroke Scale (NIHSS)">NIH Stroke Scale (NIHSS)</small></summary><div class="calc-card"><p class="error" role="alert"></p>
+        
+        <label data-pt="1a. Nível de consciência" data-es="1a. Nivel de conciencia" for="n1">1a. Nível de consciência</label>
+        <select id="n1"><option value="0">0 — Alerta</option><option value="1">1 — Não alerta, mas despertável</option><option value="2">2 — Não alerta, reage a estímulo</option><option value="3">3 — Coma / sem resposta</option></select>
+        <label data-pt="1b. Perguntas (mês, idade) — 0-2" data-es="1b. Preguntas (mes, edad) — 0-2" for="n2">1b. Perguntas (mês, idade) — 0-2</label>
+        <select id="n2"><option value="0">0 — Responde ambas corretamente</option><option value="1">1 — Responde uma corretamente</option><option value="2">2 — Responde nenhuma corretamente</option></select>
+        <label data-pt="1c. Comandos (abrir/fechar olhos, apertar/soltar mão) — 0-2" data-es="1c. Comandos (abrir/cerrar ojos, apretar/soltar mano) — 0-2" for="n3">1c. Comandos (abrir/fechar olhos, apertar/soltar mão) — 0-2</label>
+        <select id="n3"><option value="0">0 — Executa ambos corretamente</option><option value="1">1 — Executa um corretamente</option><option value="2">2 — Executa nenhum corretamente</option></select>
+        <label data-pt="2. Olhar conjugado — 0-2" data-es="2. Mirada conjugada — 0-2" for="n4">2. Olhar conjugado — 0-2</label>
+        <select id="n4"><option value="0">0 — Normal</option><option value="1">1 — Desvio parcial do olhar</option><option value="2">2 — Desvio forçado / não superável</option></select>
+        <label data-pt="3. Campo visual — 0-3" data-es="3. Campo visual — 0-3" for="n5">3. Campo visual — 0-3</label>
+        <select id="n5"><option value="0">0 — Sem perda</option><option value="1">1 — Hemianopsia parcial</option><option value="2">2 — Hemianopsia completa</option><option value="3">3 — Hemianopsia bilateral (cego)</option></select>
+        <label data-pt="4. Paralisia facial — 0-3" data-es="4. Parálisis facial — 0-3" for="n6">4. Paralisia facial — 0-3</label>
+        <select id="n6"><option value="0">0 — Normal</option><option value="1">1 — Leve (assimetria mínima)</option><option value="2">2 — Moderada</option><option value="3">3 — Completa (ausente)</option></select>
+        <label data-pt="5a. Braço motor esquerdo — 0-4" data-es="5a. Brazo motor izquierdo — 0-4" for="n7">5a. Braço motor esquerdo — 0-4</label>
+        <select id="n7"><option value="0">0 — Não cai por 10 segundos</option><option value="1">1 — Cai, mas não atinge a cama</option><option value="2">2 — Esforço contra a gravidade</option><option value="3">3 — Sem esforço contra a gravidade</option><option value="4">4 — Nenhum movimento</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="5b. Braço motor direito — 0-4" data-es="5b. Brazo motor derecho — 0-4" for="n8">5b. Braço motor direito — 0-4</label>
+        <select id="n8"><option value="0">0 — Não cai por 10 segundos</option><option value="1">1 — Cai, mas não atinge a cama</option><option value="2">2 — Esforço contra a gravidade</option><option value="3">3 — Sem esforço contra a gravidade</option><option value="4">4 — Nenhum movimento</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="6a. Perna motor esquerda — 0-4" data-es="6a. Pierna motor izquierda — 0-4" for="n9">6a. Perna motor esquerda — 0-4</label>
+        <select id="n9"><option value="0">0 — Não cai por 5 segundos</option><option value="1">1 — Cai, mas não atinge a cama</option><option value="2">2 — Esforço contra a gravidade</option><option value="3">3 — Sem esforço contra a gravidade</option><option value="4">4 — Nenhum movimento</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="6b. Perna motor direita — 0-4" data-es="6b. Pierna motor derecha — 0-4" for="n10">6b. Perna motor direita — 0-4</label>
+        <select id="n10"><option value="0">0 — Não cai por 5 segundos</option><option value="1">1 — Cai, mas não atinge a cama</option><option value="2">2 — Esforço contra a gravidade</option><option value="3">3 — Sem esforço contra a gravidade</option><option value="4">4 — Nenhum movimento</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="7. Ataxia de membros — 0-2" data-es="7. Ataxia de miembros — 0-2" for="n11">7. Ataxia de membros — 0-2</label>
+        <select id="n11"><option value="0">0 — Ausente</option><option value="1">1 — Presente em um membro</option><option value="2">2 — Presente em dois membros</option><option value="UN">UN — Amputação / imobilizado</option></select>
+        <label data-pt="8. Sensibilidade — 0-2" data-es="8. Sensibilidad — 0-2" for="n12">8. Sensibilidade — 0-2</label>
+        <select id="n12"><option value="0">0 — Normal</option><option value="1">1 — Leve a moderada perda</option><option value="2">2 — Perda grave a completa</option></select>
+        <label data-pt="9. Melhor linguagem — 0-3" data-es="9. Mejor lenguaje — 0-3" for="n13">9. Melhor linguagem — 0-3</label>
+        <select id="n13"><option value="0">0 — Sem afasia</option><option value="1">1 — Afasia leve a moderada</option><option value="2">2 — Afasia grave</option><option value="3">3 — Mudo / afasia global</option></select>
+        <label data-pt="10. Disartria — 0-2" data-es="10. Disartria — 0-2" for="n14">10. Disartria — 0-2</label>
+        <select id="n14"><option value="0">0 — Normal</option><option value="1">1 — Leve a moderada</option><option value="2">2 — Grave</option><option value="UN">UN — Intubação / outro impedimento</option></select>
+        <label data-pt="11. Extinção / inatenção — 0-2" data-es="11. Extinción / inatención — 0-2" for="n15">11. Extinção / inatenção — 0-2</label>
+        <select id="n15"><option value="0">0 — Sem alteração</option><option value="1">1 — Inatenção a um modalidade</option><option value="2">2 — Inatenção a mais de um modalidade / hemiinatenção</option></select>
+        <button class="btn small" onclick="calcNIH()" style="margin-top:12px" data-pt="Calcular" data-es="Calcular">Calcular</button>
+        <div id="nih-res" class="calc-result hidden" role="status" aria-live="polite"></div>
+        
+      <div class="reference-box"><p data-pt="NIHSS: soma dos 15 componentes do exame (0–42). Item não testável não equivale a zero: esta versão não fornece total quando há UN. Requer treinamento e materiais oficiais; não substitui exame neurológico nem exclui AVC com pontuação zero." data-es="NIHSS: suma de los 15 componentes (0–42). No evaluable no equivale a cero: esta versión no da total si hay UN. Requiere formación y materiales oficiales; no sustituye examen neurológico ni excluye ACV con puntaje cero." class="calc-ref">NIHSS: soma dos 15 componentes do exame (0–42). Item não testável não equivale a zero: esta versão não fornece total quando há UN. Requer treinamento e materiais oficiais; não substitui exame neurológico nem exclui AVC com pontuação zero.</p><p class="calc-ref"><span data-pt="Referências: " data-es="Referencias: ">Referências: </span><a href="https://www.ninds.nih.gov/health-information/stroke/assess-and-treat/nih-stroke-scale" target="_blank" rel="noopener noreferrer">NINDS — NIHSS</a> · </p><p data-pt="Revisão desta implementação: 18/09/2026." data-es="Revisión de esta implementación: 18/09/2026." class="calc-ref">Revisão desta implementação: 18/09/2026.</p></div><div class="tool-actions"><button data-pt="Limpar" data-es="Limpiar" class="btn secondary small" type="button" data-clear="tab-nih">Limpar</button><a data-pt="Link desta calculadora" data-es="Enlace de esta calculadora" href="#tab-nih" data-share="tab-nih">Link desta calculadora</a></div></div></details>
+
+  <p data-pt="Privacidade: os cálculos acontecem neste navegador. Os dados dos campos não são enviados nem armazenados pelo site. Links externos seguem as políticas dos respectivos serviços." data-es="Privacidad: los cálculos se realizan en este navegador. El sitio no envía ni almacena los datos ingresados. Los enlaces externos siguen las políticas de sus respectivos servicios." class="privacy">Privacidade: os cálculos acontecem neste navegador. Os dados dos campos não são enviados nem armazenados pelo site. Links externos seguem as políticas dos respectivos serviços.</p></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><b>Dr. Gabriel C. de Sena</b><br>MÉDICO CLÍNICO GERAL • Brasil / Argentina</div>
+    <div>© 2026 • Todos os direitos reservados.</div>
+  <a data-pt="Contato pelo WhatsApp ↗" data-es="Contacto por WhatsApp ↗" href="https://wa.me/5511994269621" target="_blank" rel="noopener noreferrer">Contato pelo WhatsApp ↗</a></div>
+  <div class="container disclaimer" data-pt="As informações deste site têm finalidade educativa e não substituem avaliação médica individualizada. Sempre consulte um profissional de saúde qualificado." data-es="La información de este sitio tiene finalidad educativa y no sustituye evaluación médica individualizada. Siempre consulte a un profesional de salud calificado.">As informações deste site têm finalidade educativa e não substituem avaliação médica individualizada. Sempre consulte um profissional de saúde qualificado.</div>
+</footer>
+
+
+
+
+
+
+
+<div class="mobile-contact"><a href="https://wa.me/5511994269621" data-pt="Conversar pelo WhatsApp ↗" data-es="Contactar por WhatsApp ↗" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp ↗</a></div><script>
+// ===================== IDIOMA =====================
+let currentLang = 'pt';
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+menuToggle.addEventListener('click', function(){
+  const open = mainNav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.textContent = open ? '×' : '☰';
+});
+mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', function(){
+  mainNav.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded','false');
+  menuToggle.textContent = '☰';
+}));
+function toggleLang(){
+  currentLang = currentLang === 'pt' ? 'es' : 'pt';
+  document.getElementById('langBtn').textContent = currentLang === 'pt' ? 'ES' : 'PT';
+  document.querySelectorAll('[data-pt]').forEach(el => {
+    if(el.tagName !== 'OPTION') el.textContent = el.getAttribute('data-' + currentLang);
+  });
+  document.querySelectorAll('option[data-pt]').forEach(opt => {
+    opt.textContent = opt.getAttribute('data-' + currentLang);
+  });
+}
+
+// ===================== TABS =====================
+
+// ===================== IMC =====================
+
+// ===================== SC =====================
+
+// ===================== Água Corporal Total (Watson) =====================
+
+// ===================== Necessidade Hídrica Diária =====================
+function calcAguaDiaria(){
+  const weight = parseFloat(document.getElementById('agua-peso').value.replace(',','.'));
+  const heightCm = parseFloat(document.getElementById('agua-altura').value.replace(',','.'));
+  const sex = document.getElementById('agua-sexo').value;
+  const minutes = parseFloat(document.getElementById('agua-exercicio').value.replace(',','.'));
+  const condition = document.getElementById('agua-condicao').value;
+  if(!weight || weight<20 || weight>350 || !heightCm || heightCm<120 || heightCm>230 || Number.isNaN(minutes) || minutes<0 || minutes>720){
+    alert(currentLang==='pt'?'Informe peso, altura e tempo de exercício válidos':'Informe peso, altura y tiempo de ejercicio válidos');
+    return;
+  }
+
+  const heightM = heightCm / 100;
+  const bmi = weight / (heightM * heightM);
+  let calcWeight = weight;
+  let idealWeight = null;
+  let adjustedWeight = null;
+
+  // Devine: 50 kg (homem) ou 45,5 kg (mulher) + 2,3 kg por polegada acima de 5 pés.
+  if(bmi >= 30){
+    const inches = heightCm / 2.54;
+    const inchesOver5ft = Math.max(0, inches - 60);
+    idealWeight = (sex==='m' ? 50 : 45.5) + (2.3 * inchesOver5ft);
+    adjustedWeight = idealWeight + 0.33 * (weight - idealWeight);
+    calcWeight = adjustedWeight;
+  }
+
+  const basalMin = calcWeight * 30 / 1000;
+  const basalMax = calcWeight * 35 / 1000;
+  const hours = minutes / 60;
+  const exerciseMinRate = condition==='quente' ? 0.6 : 0.4;
+  const exerciseMaxRate = 0.8;
+  const exerciseMin = hours * exerciseMinRate;
+  const exerciseMax = hours * exerciseMaxRate;
+  const totalMin = basalMin + exerciseMin;
+  const totalMax = basalMax + exerciseMax;
+  const r = document.getElementById('agua-res');
+
+  let weightInfo;
+  if(bmi >= 30){
+    weightInfo = currentLang==='pt'
+      ? 'IMC: '+bmi.toFixed(1)+' kg/m². Como o IMC é ≥30, o cálculo usou peso ajustado de '+adjustedWeight.toFixed(1)+' kg (peso ideal estimado: '+idealWeight.toFixed(1)+' kg), em vez do peso atual de '+weight.toFixed(1)+' kg.'
+      : 'IMC: '+bmi.toFixed(1)+' kg/m². Como el IMC es ≥30, el cálculo utilizó un peso ajustado de '+adjustedWeight.toFixed(1)+' kg (peso ideal estimado: '+idealWeight.toFixed(1)+' kg), en lugar del peso actual de '+weight.toFixed(1)+' kg.';
+  } else {
+    weightInfo = currentLang==='pt'
+      ? 'IMC: '+bmi.toFixed(1)+' kg/m². O cálculo usou o peso atual ('+weight.toFixed(1)+' kg).'
+      : 'IMC: '+bmi.toFixed(1)+' kg/m². El cálculo utilizó el peso actual ('+weight.toFixed(1)+' kg).';
+  }
+
+  if(currentLang==='pt'){
+    r.innerHTML = '<strong>Total estimado: '+totalMin.toFixed(1)+'–'+totalMax.toFixed(1)+' L/dia</strong><br>Necessidade basal: '+basalMin.toFixed(1)+'–'+basalMax.toFixed(1)+' L/dia.<br>Adicional pelo exercício: '+exerciseMin.toFixed(1)+'–'+exerciseMax.toFixed(1)+' L.<br><small>'+weightInfo+'<br>É uma faixa de líquidos totais, não uma prescrição para beber tudo como água pura. Para maior precisão no exercício, pese-se antes e depois: cada 1 kg perdido corresponde aproximadamente a 1 L de suor, descontando o que foi ingerido.</small>';
+  } else {
+    r.innerHTML = '<strong>Total estimado: '+totalMin.toFixed(1)+'–'+totalMax.toFixed(1)+' L/día</strong><br>Necesidad basal: '+basalMin.toFixed(1)+'–'+basalMax.toFixed(1)+' L/día.<br>Adicional por el ejercicio: '+exerciseMin.toFixed(1)+'–'+exerciseMax.toFixed(1)+' L.<br><small>'+weightInfo+'<br>Es un rango de líquidos totales, no una indicación de beber todo como agua pura. Para mayor precisión durante el ejercicio, pésese antes y después: cada 1 kg perdido corresponde aproximadamente a 1 L de sudor, descontando lo ingerido.</small>';
+  }
+  r.classList.remove('hidden');
+}
+
+// ===================== TFG CKD-EPI 2021 =====================
+
+// ===================== Cockcroft-Gault =====================
+
+// ===================== Necessidade Calórica =====================
+
+// ===================== Pacotes-Ano =====================
+
+// ===================== Síndrome Metabólica =====================
+function calcMetabolica(){
+  const sex = document.getElementById('met-sexo').value;
+  const waist = parseFloat(document.getElementById('met-cintura').value.replace(',','.'));
+  const tg = parseFloat(document.getElementById('met-tg').value.replace(',','.'));
+  const hdl = parseFloat(document.getElementById('met-hdl').value.replace(',','.'));
+  const sbp = parseFloat(document.getElementById('met-pas').value.replace(',','.'));
+  const dbp = parseFloat(document.getElementById('met-pad').value.replace(',','.'));
+  const glucose = parseFloat(document.getElementById('met-glic').value.replace(',','.'));
+  if(!waist || !tg || !hdl || !sbp || !dbp || !glucose){
+    alert(currentLang==='pt'?'Preencha todas as medidas e exames com valores válidos':'Complete todas las medidas y análisis con valores válidos');
+    return;
+  }
+  const criteria = [
+    {ok: waist >= (sex==='m' ? 90 : 80), pt:'circunferência abdominal elevada', es:'circunferencia abdominal elevada'},
+    {ok: tg >= 150 || document.getElementById('met-tg-med').checked, pt:'triglicerídeos elevados/tratados', es:'triglicéridos elevados/tratados'},
+    {ok: hdl < (sex==='m' ? 40 : 50) || document.getElementById('met-hdl-med').checked, pt:'HDL reduzido/tratado', es:'HDL reducido/tratado'},
+    {ok: sbp >= 130 || dbp >= 85 || document.getElementById('met-pa-med').checked, pt:'pressão arterial elevada/tratada', es:'presión arterial elevada/tratada'},
+    {ok: glucose >= 100 || document.getElementById('met-glic-med').checked, pt:'glicemia elevada/tratada', es:'glucemia elevada/tratada'}
+  ];
+  const positive = criteria.filter(c => c.ok);
+  const diagnosis = positive.length >= 3;
+  const names = positive.length ? positive.map(c => currentLang==='pt'?c.pt:c.es).join('; ') : (currentLang==='pt'?'nenhum critério':'ningún criterio');
+  const r = document.getElementById('met-res');
+  if(currentLang==='pt'){
+    r.innerHTML = '<strong style="color:'+(diagnosis?'var(--danger)':'var(--accent)')+'">'+positive.length+'/5 critérios — '+(diagnosis?'Compatível com síndrome metabólica':'Não preenche critérios para síndrome metabólica')+'</strong><br><small>Critérios positivos: '+names+'.</small>';
+  } else {
+    r.innerHTML = '<strong style="color:'+(diagnosis?'var(--danger)':'var(--accent)')+'">'+positive.length+'/5 criterios — '+(diagnosis?'Compatible con síndrome metabólico':'No cumple criterios para síndrome metabólico')+'</strong><br><small>Criterios positivos: '+names+'.</small>';
+  }
+  r.classList.remove('hidden');
+}
+
+// ===================== Consumo de Álcool =====================
+
+// ===================== Idade Gestacional =====================
+
+// ===================== CHA2DS2-VASc =====================
+
+// ===================== Wells TVP =====================
+
+// ===================== Wells TEP =====================
+
+// ===================== Alvarado =====================
+
+// ===================== Glasgow =====================
+
+// ===================== NIHSS =====================
+
+// All calculator data stays in memory: no storage, analytics or network requests.
+const lang=(pt,es)=>currentLang==='pt'?pt:es;
+const number=id=>Number(document.getElementById(id).value.replace(',','.'));
+function result(id,html){const e=document.getElementById(id);e.innerHTML=html;e.classList.remove('hidden')}
+function calculateNew(id){
+ if(id==='proteina'){
+  const w=number('prot-peso'),bmi=w/(number('prot-alt')/100)**2;
+  if(bmi<18.5||bmi>=30){result(id+'-res',lang('Com esse IMC, a quantidade de proteína precisa ser individualizada. Não aplicamos uma multiplicação automática pelo peso atual.','Con este IMC, la cantidad de proteína debe individualizarse. No multiplicamos automáticamente por el peso actual.'));return}
+  const train=document.getElementById('prot-perfil').value==='treino';
+  result(id+'-res','<strong>'+ (train?Math.round(w*1.4)+'–'+Math.round(w*2):Math.round(w*.83))+' '+lang('g de proteína/dia','g de proteína/día')+'</strong><br>'+lang(train?'Faixa estimada para quem treina regularmente.':'Referência populacional para adultos saudáveis sem treinamento regular.',train?'Rango estimado para entrenamiento regular.':'Referencia poblacional para adultos sanos sin entrenamiento regular.')+'<br>'+lang('Inclui toda a proteína dos alimentos; não significa necessidade de suplemento.','Incluye toda la proteína de los alimentos; no implica necesidad de suplementos.'));
+ }else if(id==='exercicio'){
+  const met=number('ex-met'),factor=3.5*number('ex-peso')/200*number('ex-min');
+  result(id+'-res','<strong>≈ '+Math.round(met*factor)+' kcal '+lang('no total','en total')+'</strong><br>≈ '+Math.round((met-1)*factor)+' kcal '+lang('adicionais acima do repouso','adicionales sobre el reposo')+'<br>MET: '+met+'<br>'+lang('Estimativa populacional; não corresponde a uma medição do seu metabolismo.','Estimación poblacional; no es una medición de su metabolismo.'));
+ }else if(id==='economia'){
+  const daily=number('eco-dia')/number('eco-pack')*number('eco-preco');const format=n=>new Intl.NumberFormat(currentLang==='pt'?'pt-BR':'es-AR',{style:'currency',currency:document.getElementById('eco-moeda').value}).format(n);
+  result(id+'-res','<strong>'+format(daily*365)+' / '+lang('ano','año')+'</strong><br>'+format(daily*30)+' / '+lang('mês (30 dias)','mes (30 días)')+'<br>'+format(daily)+' / '+lang('dia','día')+'<br>'+lang('Projeção se deixar de comprar essa quantidade de cigarros.','Proyección si deja de comprar esa cantidad de cigarrillos.'));
+ }else if(id==='atividade'){
+  const min=number('at-mod')+2*number('at-vig'),strength=number('at-forca');
+  if(number('at-mod')+number('at-vig')>10080){result(id+'-res',lang('A soma excede os minutos disponíveis em uma semana. Revise os dados.','La suma supera los minutos de una semana. Revise los datos.'));return}
+  result(id+'-res','<strong>'+min+' '+lang('minutos equivalentes/semana','minutos equivalentes/semana')+'</strong><br><progress max="150" value="'+Math.min(min,150)+'" aria-label="'+lang('Progresso até 150 minutos','Progreso hasta 150 minutos')+'"></progress><br>'+lang(min>=150?'Mínimo aeróbico atingido.':'Faltam '+(150-min)+' min moderados ou '+Math.ceil((150-min)/2)+' min vigorosos para o mínimo aeróbico.',min>=150?'Mínimo aeróbico alcanzado.':'Faltan '+(150-min)+' min moderados o '+Math.ceil((150-min)/2)+' min vigorosos.')+'<br>'+lang(strength>=2?'Fortalecimento: mínimo de 2 dias atingido.':'Fortalecimento: faltam '+(2-strength)+' dia(s) para o mínimo semanal.',strength>=2?'Fortalecimiento: mínimo de 2 días alcanzado.':'Fortalecimiento: faltan '+(2-strength)+' día(s).')+'<br>'+lang('Aumente gradualmente conforme sua condição. Qualquer movimento conta.','Aumente gradualmente según su condición. Todo movimiento cuenta.'));
+ }
+}
+function calcPack(){result('pack-res','<strong>'+((number('pack-dia')/20)*number('pack-anos')).toFixed(1)+' '+lang('pacotes-ano','paquetes-año')+'</strong><br>'+lang('Exposição acumulada estimada; não determina isoladamente indicação de tomografia.','Exposición acumulada estimada; no determina por sí sola indicación de tomografía.'))}
+function calcAlcool(){const grams=number('alc-ml')*number('alc-abv')/100*.789;result('alc-res','<strong>'+grams.toFixed(1)+' g '+lang('de álcool puro/dia','de alcohol puro/día')+'</strong><br>'+(grams/10).toFixed(1)+' '+lang('unidades de 10 g.','unidades de 10 g.')+'<br>'+lang('Não existe consumo isento de risco. Quanto menos, menor o risco.','No existe consumo sin riesgo. Cuanto menos, menor riesgo.'))}
+function calcIG(){const input=document.getElementById('ig-dum').value;if(!input)return;const d=new Date(input+'T00:00:00Z');const now=new Date();const today=Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());const days=Math.floor((today-d.getTime())/86400000);if(days<0||days>315){result('ig-res',lang('Informe uma DUM passada, há no máximo 45 semanas.','Ingrese una FUM pasada, de hace como máximo 45 semanas.'));return}const due=new Date(d.getTime()+280*86400000);result('ig-res','<strong>'+Math.floor(days/7)+' '+lang('semanas e ','semanas y ')+(days%7)+' '+lang('dias','días')+'</strong><br>'+lang('Data provável do parto: ','Fecha probable de parto: ')+due.toLocaleDateString(currentLang==='pt'?'pt-BR':'es-AR',{timeZone:'UTC'})+'<br>'+lang('Estimativa pela última menstruação; confirme a datação no pré-natal.','Estimación por última menstruación; confirme en el control prenatal.'))}
+function calcCHA2(){if(document.getElementById('c3').checked&&document.getElementById('c7').checked){result('cha2-res',lang('Selecione apenas uma faixa etária.','Seleccione solo un grupo de edad.'));return}const weights=[1,1,2,1,2,1,1,1];let score=weights.reduce((s,w,i)=>s+(document.getElementById('c'+(i+1)).checked?w:0),0);let va=score-(document.getElementById('c8').checked?1:0);result('cha2-res','<strong>CHA₂DS₂-VASc: '+score+' / 9<br>CHA₂DS₂-VA: '+va+' / 8</strong><br>'+lang('Uso em fibrilação atrial. Interpretar conforme diretriz e contexto clínico.','Uso en fibrilación auricular. Interpretar según guía y contexto clínico.'))}
+function calcWellsTVP(){let s=0;for(let i=1;i<=9;i++)if(document.getElementById('w'+i).checked)s++;if(document.getElementById('w10').checked)s-=2;result('wells-tvp-res','<strong>Wells: '+s+' — '+lang(s>=2?'TVP provável':'TVP improvável',s>=2?'TVP probable':'TVP improbable')+'</strong><br>'+lang('Modelo de duas categorias; integrar ao algoritmo diagnóstico.','Modelo de dos categorías; integrar al algoritmo diagnóstico.'))}
+function calcGCS(){const e=number('gcs-eye'),v=number('gcs-verbal'),m=number('gcs-motor');result('gcs-res','<strong>Glasgow: '+(e+v+m)+' / 15</strong><br>E'+e+' V'+v+' M'+m+'<br>'+lang('Válido apenas se todos os componentes forem testáveis.','Válido solo con todos los componentes evaluables.'))}
+function calcNIH(){let s=0;for(let i=1;i<=15;i++){const v=document.getElementById('n'+i).value;if(v==='UN'){result('nih-res',lang('Há componente não testável (UN). Não foi calculado um total; documente o impedimento.','Hay un componente no evaluable (UN). No se calculó el total; documente el impedimento.'));return}s+=Number(v)}result('nih-res','<strong>NIHSS: '+s+' / 42</strong><br>'+lang('Interpretar junto ao exame neurológico. Mesmo pontuação zero não exclui AVC.','Interpretar con el examen neurológico. Incluso cero no excluye ACV.'))}
+function showWells(id){document.querySelectorAll('#wells-tvp,#wells-tep').forEach(e=>e.classList.toggle('active',e.id===id));document.querySelectorAll('#tab-wells .tab-btn').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes(id)))}
+function setAudience(a){document.querySelectorAll('.calculator').forEach(d=>d.hidden=d.dataset.audience!==a);document.querySelectorAll('[data-audience].tab-btn').forEach(b=>{const active=b.dataset.audience===a;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))})}
+document.querySelectorAll('[data-audience].tab-btn').forEach(b=>b.addEventListener('click',()=>setAudience(b.dataset.audience)));
+function openHash(){const d=document.getElementById(location.hash.slice(1));if(d&&d.classList.contains('calculator')){setAudience(d.dataset.audience);d.open=true;setTimeout(()=>d.scrollIntoView({block:'start'}),50)}}
+window.addEventListener('hashchange',openHash);openHash();
+document.querySelectorAll('[data-share]').forEach(a=>a.addEventListener('click',()=>{if(location.hash===a.getAttribute('href'))openHash()}));
+document.querySelectorAll('[data-clear]').forEach(b=>b.addEventListener('click',()=>{const d=document.getElementById(b.dataset.clear);d.querySelectorAll('input').forEach(i=>{if(i.type==='checkbox')i.checked=false;else i.value='';i.removeAttribute('aria-invalid')});d.querySelectorAll('select').forEach(s=>s.selectedIndex=0);d.querySelectorAll('.calc-result').forEach(r=>{r.innerHTML='';r.classList.add('hidden')});d.querySelector('.error').textContent='';d.querySelector('input,select')?.focus()}));
+// Validate BEFORE inline handlers run. Empty input is never silently converted to zero.
+document.addEventListener('click',event=>{const b=event.target.closest('.calculator button[onclick]');if(!b||b.classList.contains('tab-btn'))return;const card=b.closest('.calculator');const scope=b.closest('#wells-tvp,#wells-tep')||card;const error=card.querySelector('.error');error.textContent='';card.querySelectorAll('.calc-result').forEach(r=>r.classList.add('hidden'));for(const input of scope.querySelectorAll('input[type=number],input[type=date]')){
+ input.removeAttribute('aria-invalid');if(!input.value.trim()||!input.checkValidity()||(input.type==='number'&&!Number.isFinite(input.valueAsNumber))){event.preventDefault();event.stopImmediatePropagation();const label=document.querySelector('label[for="'+input.id+'"]')?.textContent.trim()||input.id;error.textContent=lang('Revise o campo: ','Revise el campo: ')+label+'. '+lang('Preencha um valor válido','Ingrese un valor válido')+(input.type==='number'?' ('+input.min+'–'+input.max+')':'')+'.';input.setAttribute('aria-invalid','true');input.focus();return}
+}},true);
+document.querySelectorAll('.calculator input,.calculator select').forEach(i=>{i.addEventListener('input',()=>{const d=i.closest('.calculator');d.querySelectorAll('.calc-result').forEach(r=>r.classList.add('hidden'));d.querySelector('.error').textContent='';i.removeAttribute('aria-invalid')});i.addEventListener('keydown',e=>{if(e.key==='Enter'&&i.tagName==='INPUT'&&i.type!=='checkbox'){e.preventDefault();i.closest('.calc-card').querySelector('button[onclick]')?.click()}})});
+const oldLangToggle=toggleLang;toggleLang=function(){oldLangToggle();document.documentElement.lang=currentLang==='pt'?'pt-BR':'es';document.querySelectorAll('.calc-result').forEach(r=>r.classList.add('hidden'));document.querySelectorAll('.error').forEach(r=>r.textContent='');menuToggle.setAttribute('aria-label',lang('Abrir menu','Abrir menú'))};
+document.getElementById('ig-dum').required=true;
+// Preserve legacy hydration estimate, correct the sweat-loss explanation.
+const legacyWater=calcAguaDiaria;calcAguaDiaria=function(){legacyWater();const r=document.getElementById('agua-res');r.innerHTML=r.innerHTML.replace('descontando o que foi ingerido','somando os líquidos ingeridos e descontando a urina eliminada').replace('descontando lo ingerido','sumando los líquidos ingeridos y restando la orina eliminada')};
+function calcIMC(){const bmi=number('imc-peso')/number('imc-alt')**2;const pt=['Baixo peso','Faixa usual de IMC','Sobrepeso','Obesidade I','Obesidade II','Obesidade III'],es=['Bajo peso','Rango habitual de IMC','Sobrepeso','Obesidad I','Obesidad II','Obesidad III'];const i=bmi<18.5?0:bmi<25?1:bmi<30?2:bmi<35?3:bmi<40?4:5;result('imc-res','<strong>IMC: '+bmi.toFixed(1)+' kg/m² — '+lang(pt[i],es[i])+'</strong><br>'+lang('Classificação para adultos não gestantes. Não distingue gordura de massa muscular.','Clasificación para adultos no embarazadas. No distingue grasa de masa muscular.'))}
+function calcSC(){result('sc-res','<strong>'+lang('Superfície corporal: ','Superficie corporal: ')+(0.007184*number('sc-peso')**.425*number('sc-alt')**.725).toFixed(2)+' m²</strong>')}
+function calcCal(){const resting=10*number('cal-peso')+6.25*number('cal-alt')-5*number('cal-idade')+(document.getElementById('cal-sexo').value==='m'?5:-161);if(resting<=0){result('cal-res',lang('Dados fora da faixa de aplicação; revise os valores.','Datos fuera del rango de aplicación; revise los valores.'));return}result('cal-res','<strong>'+lang('Gasto diário estimado: ','Gasto diario estimado: ')+Math.round(resting*number('cal-atv'))+' kcal</strong><br>'+lang('Gasto de repouso: ','Gasto en reposo: ')+Math.round(resting)+' kcal/'+lang('dia','día')+'<br>'+lang('Estimativa de manutenção, não uma prescrição alimentar.','Estimación de mantenimiento, no una prescripción alimentaria.'))}
+function calcTFG(){const female=document.getElementById('tfg-sexo').value==='f',k=female?.7:.9,a=female?-.241:-.302,ratio=number('tfg-cr')/k;const gfr=142*Math.min(ratio,1)**a*Math.max(ratio,1)**-1.2*.9938**number('tfg-idade')*(female?1.012:1);const category=gfr>=90?'G1':gfr>=60?'G2':gfr>=45?'G3a':gfr>=30?'G3b':gfr>=15?'G4':'G5';result('tfg-res','<strong>TFG: '+gfr.toFixed(1)+' mL/min/1,73 m² — '+category+'</strong><br>'+lang('Categoria de filtração estimada. Uma medida isolada não diagnostica doença renal crônica.','Categoría de filtración estimada. Una medición aislada no diagnostica enfermedad renal crónica.'))}
+function calcCG(){const c=(140-number('cg-idade'))*number('cg-peso')/(72*number('cg-cr'))*(document.getElementById('cg-sexo').value==='f'?.85:1);result('cg-res','<strong>ClCr: '+c.toFixed(1)+' mL/min</strong><br>'+lang('Usa o peso informado; avaliar sua adequação para o medicamento e a composição corporal.','Usa el peso ingresado; evaluar su adecuación al medicamento y la composición corporal.'))}
+function calcWellsTEP(){const ws=[3,3,1.5,1.5,1.5,1,1];const s=ws.reduce((a,v,i)=>a+(document.getElementById('wt'+(i+1)).checked?v:0),0);result('wells-tep-res','<strong>Wells: '+s+' — '+lang(s>4?'TEP provável':'TEP improvável',s>4?'TEP probable':'TEP improbable')+'</strong><br>'+lang('Integrar ao algoritmo diagnóstico; não exclui TEP isoladamente.','Integrar al algoritmo diagnóstico; no excluye TEP por sí solo.'))}
+function calcAlvarado(){const weights=[1,1,1,2,1,1,2,1];const s=weights.reduce((a,v,i)=>a+(document.getElementById('a'+(i+1)).checked?v:0),0);result('alv-res','<strong>Alvarado: '+s+' / 10</strong><br>'+lang('Interpretar junto ao exame clínico e investigação. Pontuação baixa não exclui apendicite.','Interpretar con el examen clínico y la investigación. Puntaje bajo no excluye apendicitis.'))}
+</script></body></html>
