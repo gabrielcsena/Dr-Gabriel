@@ -1,0 +1,56 @@
+/* Agendamento da página inicial. */
+section[id], details[id], #agendamento { scroll-margin-top: calc(var(--header-height, 112px) + 18px); }
+header .nav-actions .btn { display: inline-flex; align-items: center; justify-content: center; background: #1e40af; }
+.service-intro { max-width: 930px; margin-bottom: 34px; }
+.service-intro h3 { font-size: 23px; }
+.service-intro p { color: var(--muted); font-size: 16px; }
+.booking-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.booking-card { min-width: 0; padding: 32px; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 10px 35px #13212b08; }
+.booking-card.whatsapp { background: linear-gradient(155deg, #f0fdf7, #fff 65%); border-color: #b8decb; }
+.booking-card.online { background: linear-gradient(155deg, #eff6ff, #fff 65%); }
+.booking-label { display: inline-flex; align-items: center; gap: 9px; padding: 6px 11px; margin-bottom: 20px; border-radius: 999px; font-size: 12px; font-weight: 750; color: #17603d; background: #e2f4e9; }
+.booking-card.online .booking-label { color: #1e40af; background: #dbeafe; }
+.booking-card h3 { font-size: clamp(22px, 2.4vw, 29px); line-height: 1.25; letter-spacing: -.025em; max-width: 410px; }
+.booking-card p { font-size: 15px; color: var(--muted); margin: 15px 0 24px; }
+.booking-card .btn { min-height: 48px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; font-family: inherit; font-size: 16px; background: #1e40af; }
+.booking-card .btn:hover { background: #17378f; }
+.booking-card.whatsapp .btn { background: #17603d; }
+.booking-card.whatsapp .btn:hover { background: #124b30; }
+.booking-card .booking-note { font-size: 13px; line-height: 1.55; margin: 14px 0 0; }
+.booking-symbol { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; flex: 0 0 auto; }
+.day-picker { margin-top: 24px; border: 1px solid #d5e9dd; border-radius: 16px; background: #fff; padding: 16px; }
+.day-picker [hidden] { display: none !important; }
+.calendar-head { display: grid; grid-template-columns: 40px 1fr 40px; align-items: center; gap: 7px; margin-bottom: 15px; }
+.calendar-head h4 { margin: 0; text-align: center; font-size: 16px; line-height: 1.35; }
+.calendar-head h4::first-letter { text-transform: uppercase; }
+.calendar-nav { height: 40px; width: 40px; border: 1px solid #d5e9dd; border-radius: 10px; background: #fff; color: #17603d; font-size: 24px; cursor: pointer; }
+.calendar-nav:hover:enabled { background: #effaf3; }
+.calendar-nav:disabled { color: #9ba6a0; background: #f5f7f6; cursor: default; }
+.calendar-weekdays, .calendar-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.calendar-weekdays { margin-bottom: 7px; color: #52675b; font-size: 11px; font-weight: 700; text-align: center; }
+.calendar-day { display: flex; align-items: center; justify-content: center; min-height: 43px; padding: 3px 0; border: 1px solid transparent; border-radius: 9px; font-size: 14px; line-height: 1; }
+a.calendar-day { color: #17603d; font-weight: 750; background: #effaf3; }
+a.calendar-day:hover { color: #fff; background: #17603d; }
+.calendar-day.is-today { border-color: #17603d; }
+span.calendar-day.is-disabled { color: #9ba6a0; }
+.day-picker .calendar-instruction { margin: 14px 0 0; font-size: 12px; color: #52675b; }
+.booking-fallback { display: inline-block; margin-top: 15px; color: #17603d; text-decoration: underline; }
+.footer-privacy { color: #52626c; text-decoration: underline; }
+@media (max-width: 760px) {
+  .booking-grid { grid-template-columns: 1fr; gap: 18px; }
+  .booking-card { padding: 26px; border-radius: 18px; }
+  .booking-card h3 { max-width: none; font-size: 25px; }
+  .service-intro { margin-bottom: 26px; }
+}
+@media (max-width: 560px) {
+  header .nav-actions .btn { padding: 9px 11px; font-size: 13px; min-height: 40px; }
+  header .brand { font-size: 15px; }
+  .booking-card { padding: 22px 18px; }
+  .booking-card h3 { font-size: 24px; }
+  .booking-label { margin-bottom: 16px; }
+  .day-picker { padding: 12px 8px; }
+  .calendar-days, .calendar-weekdays { gap: 3px; }
+  .calendar-day { min-height: 44px; }
+  .calendar-head { grid-template-columns: 40px 1fr 40px; gap: 4px; }
+  .calendar-head h4 { font-size: 15px; }
+}
