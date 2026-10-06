@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex">
+<title>Reservar consulta · Dr. Gabriel C. de Sena</title>
+<link rel="stylesheet" href="assets/agenda.css"><script defer src="assets/agenda-config.js"></script><script defer src="assets/agenda.js"></script>
+</head>
+<body>
+<header><a class="brand" href="index.html">Dr. Gabriel C. de Sena</a><button id="language" class="plain" type="button">PT</button></header>
+<main>
+<a class="back" href="index.html" data-es="← Volver al sitio" data-pt="← Voltar ao site">← Volver al sitio</a>
+<div class="intro"><span class="eyebrow" data-es="CONSULTA MÉDICA ONLINE" data-pt="CONSULTA MÉDICA ONLINE">CONSULTA MÉDICA ONLINE</span><h1 data-es="Tu consulta empieza acá." data-pt="Sua consulta começa aqui.">Tu consulta empieza acá.</h1><p data-es="Elegí un horario, completá tus datos y pagá de forma segura." data-pt="Escolha um horário, preencha seus dados e pague com segurança.">Elegí un horario, completá tus datos y pagá de forma segura.</p></div>
+<div class="layout">
+<section class="panel" id="booking-panel" aria-label="Agenda">
+<div id="test-mode" class="notice" hidden><b data-es="Agenda en prueba · No reserves consultas reales" data-pt="Agenda em teste · Não reserve consultas reais">Agenda en prueba · No reserves consultas reales</b><p data-es="Para probar el pago, usá únicamente cuentas y tarjetas de prueba de Mercado Pago." data-pt="Para testar o pagamento, use apenas contas e cartões de teste do Mercado Pago.">Para probar el pago, usá únicamente cuentas y tarjetas de prueba de Mercado Pago.</p><p id="test-diagnostics" class="caption" hidden></p></div>
+<ol class="steps"><li class="active" data-es="1. Horario" data-pt="1. Horário">1. Horario</li><li data-es="2. Tus datos" data-pt="2. Seus dados">2. Tus datos</li><li data-es="3. Pago" data-pt="3. Pagamento">3. Pago</li></ol>
+<div id="unconfigured" class="notice" hidden><b data-es="Agenda online en preparación" data-pt="Agenda online em preparação">Agenda online en preparación</b><p data-es="Para coordinar tu consulta, contactá al doctor por WhatsApp." data-pt="Para combinar sua consulta, entre em contato pelo WhatsApp.">Para coordinar tu consulta, contactá al doctor por WhatsApp.</p><a class="button contact" data-es="Hablar por WhatsApp" data-pt="Falar pelo WhatsApp">Hablar por WhatsApp</a></div>
+<form id="form">
+<h2 data-es="Elegí el día y el horario" data-pt="Escolha o dia e o horário">Elegí el día y el horario</h2>
+<label for="date" data-es="Fecha" data-pt="Data">Fecha</label><input type="date" id="date" required>
+<p class="caption" data-es="Horarios de Argentina (UTC−3). Disponibilidad de domingo a domingo, de 09:00 a 23:00." data-pt="Horários da Argentina (UTC−3). Disponibilidade de domingo a domingo, das 09h às 23h.">Horarios de Argentina (UTC−3). Disponibilidad de domingo a domingo, de 09:00 a 23:00.</p>
+<div id="slots" class="slots" role="group" aria-label="Horarios / Horários"></div><p id="slots-message" role="status" aria-live="polite"></p>
+<div id="patient" hidden><hr><h2 data-es="¿Cómo te llamás?" data-pt="Como você se chama?">¿Cómo te llamás?</h2><p id="selection" class="selected"></p>
+<label for="name" data-es="Nombre y apellido" data-pt="Nome e sobrenome">Nombre y apellido</label><input id="name" autocomplete="name" minlength="3" maxlength="100" required>
+<label for="phone" data-es="WhatsApp con código de país" data-pt="WhatsApp com código do país">WhatsApp con código de país</label><input id="phone" type="tel" autocomplete="tel" placeholder="+54 9 379 123 4567" required><p class="caption" data-es="Argentina: +54 9… · Brasil: +55…" data-pt="Argentina: +54 9… · Brasil: +55…">Argentina: +54 9… · Brasil: +55…</p>
+<p class="privacy" data-es="Usamos tu nombre y WhatsApp para gestionar esta consulta. No incluyas información clínica. Los datos de pago se ingresan únicamente en Mercado Pago. El enlace de la videollamada aparecerá al confirmar tu reserva: guardalo." data-pt="Usamos seu nome e WhatsApp para organizar esta consulta. Não inclua informações clínicas. Os dados de pagamento são preenchidos apenas no Mercado Pago. O link da videochamada aparecerá na confirmação da reserva: salve-o.">Usamos tu nombre y WhatsApp para gestionar esta consulta. No incluyas información clínica. Los datos de pago se ingresan únicamente en Mercado Pago. El enlace de la videollamada aparecerá al confirmar tu reserva: guardalo.</p>
+<div id="challenge"></div><button id="pay" class="button" type="submit" data-es="Continuar al pago · ARS 25.000" data-pt="Continuar para pagamento · ARS 25.000">Continuar al pago · ARS 25.000</button><p class="caption" data-es="Reservamos el horario durante 10 minutos mientras pagás. La consulta se confirma con el pago aprobado." data-pt="Reservamos o horário por 10 minutos enquanto você paga. A consulta é confirmada após a aprovação do pagamento.">Reservamos el horario durante 10 minutos mientras pagás. La consulta se confirma con el pago aprobado.</p>
+</div>
+</form>
+<p id="error" class="error" role="alert"></p>
+<section id="result" hidden aria-live="polite"><span class="status-icon" id="status-icon">◷</span><h2 id="result-title"></h2><p id="result-detail"></p><p id="result-time" class="selected"></p><p id="countdown"></p><a id="checkout" class="button" hidden data-es="Continuar en Mercado Pago" data-pt="Continuar no Mercado Pago">Continuar en Mercado Pago</a><a id="meet" class="button" target="_blank" rel="noopener noreferrer" hidden data-es="Abrir Google Meet" data-pt="Abrir Google Meet">Abrir Google Meet</a><button id="copy" class="plain" type="button" hidden data-es="Copiar mi confirmación" data-pt="Copiar minha confirmação">Copiar mi confirmación</button><a id="ics" class="plain" hidden data-es="Guardar en mi calendario" data-pt="Salvar no meu calendário">Guardar en mi calendario</a><button id="again" class="plain" type="button" hidden data-es="Elegir otro horario" data-pt="Escolher outro horário">Elegir otro horario</button></section>
+<noscript><p>Activá JavaScript para reservar. / Ative o JavaScript para agendar.</p></noscript>
+</section>
+<aside class="summary"><img src="Imagens/foto.perfil.jpeg" alt="Dr. Gabriel C. de Sena"><h2>Dr. Gabriel C. de Sena</h2><p data-es="Consulta médica online" data-pt="Consulta médica online">Consulta médica online</p><div class="price">ARS 25.000</div><ul><li data-es="20 minutos de atención" data-pt="20 minutos de atendimento">20 minutos de atención</li><li data-es="Videollamada por Google Meet" data-pt="Videochamada pelo Google Meet">Videollamada por Google Meet</li><li data-es="Pago seguro con Mercado Pago" data-pt="Pagamento seguro pelo Mercado Pago">Pago seguro con Mercado Pago</li></ul><hr><p data-es="¿Necesitás ayuda para reservar?" data-pt="Precisa de ajuda para agendar?">¿Necesitás ayuda para reservar?</p><a class="contact" data-es="Escribime por WhatsApp →" data-pt="Fale comigo pelo WhatsApp →">Escribime por WhatsApp →</a></aside>
+</div><footer data-es="Atención programada. Este canal no atiende urgencias." data-pt="Atendimento agendado. Este canal não atende urgências.">Atención programada. Este canal no atiende urgencias.</footer>
+</main></body></html>
