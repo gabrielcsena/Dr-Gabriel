@@ -55,7 +55,7 @@ html,body{overflow-x:clip}
     <a class="brand" href="index.html">Dr. Gabriel C. de Sena</a>
     <nav class="nav-links" id="mainNav"><a href="index.html#ferramentas">Calculadoras</a><a href="conteudo-medico.html" data-pt="Conteúdo médico" data-es="Contenido médico">Conteúdo médico</a><a href="https://wa.me/5493756528947" data-pt="Contato" data-es="Contacto" target="_blank" rel="noopener noreferrer">Contato</a></nav>
     <div class="nav-actions">
-      <button class="lang-switch" onclick="toggleLang()" id="langBtn" type="button">ES</button>
+      <button class="lang-switch" onclick="toggleLang()" id="langBtn" type="button">PT</button>
       <a class="btn" href="https://wa.me/5493756528947" id="heroBtn" data-pt="Agendar" data-es="Agendar" target="_blank" rel="noopener noreferrer">Agendar</a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">☰</button>
     </div>
@@ -78,4 +78,4 @@ html,body{overflow-x:clip}
 
 
 
-<div class="mobile-contact"><a href="https://wa.me/5493756528947" data-pt="Conversar pelo WhatsApp ↗" data-es="Contactar por WhatsApp ↗" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp ↗</a></div><script>let currentLang='pt';function toggleLang(){currentLang=currentLang==='pt'?'es':'pt';document.documentElement.lang=currentLang==='pt'?'pt-BR':'es';document.getElementById('langBtn').textContent=currentLang==='pt'?'ES':'PT';document.querySelectorAll('[data-pt]').forEach(e=>e.textContent=e.dataset[currentLang])}const b=document.getElementById('menuToggle'),n=document.getElementById('mainNav');b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.textContent=open?'×':'☰'});</script></body></html>
+<div class="mobile-contact"><a href="https://wa.me/5493756528947" data-pt="Conversar pelo WhatsApp ↗" data-es="Contactar por WhatsApp ↗" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp ↗</a></div><script>let currentLang='es';function toggleLang(){currentLang=currentLang==='pt'?'es':'pt';document.documentElement.lang=currentLang==='pt'?'pt-BR':'es';document.getElementById('langBtn').textContent=currentLang==='pt'?'ES':'PT';document.querySelectorAll('[data-pt]').forEach(e=>e.textContent=e.dataset[currentLang])}document.documentElement.lang='es-AR';document.getElementById('langBtn').textContent='PT';document.querySelectorAll('[data-pt]').forEach(e=>e.textContent=e.dataset.es);const b=document.getElementById('menuToggle'),n=document.getElementById('mainNav');b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.textContent=open?'×':'☰'});</script></body></html>

@@ -61,7 +61,7 @@ html,body{overflow-x:clip}
     <a class="brand" href="index.html">Dr. Gabriel C. de Sena</a>
     <nav class="nav-links" id="mainNav"><a href="#ferramentas" data-pt="Calculadoras" data-es="Calculadoras">Calculadoras</a><a href="conteudo-medico.html" data-pt="Conteúdo médico" data-es="Contenido médico">Conteúdo médico</a><a href="#agendamento" data-pt="Contato" data-es="Contacto">Contato</a></nav>
     <div class="nav-actions">
-      <button class="lang-switch" onclick="toggleLang()" id="langBtn" type="button">ES</button>
+      <button class="lang-switch" onclick="toggleLang()" id="langBtn" type="button">PT</button>
       <a class="btn" href="#agendamento" id="heroBtn" data-pt="Agendar" data-es="Agendar">Agendar</a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">☰</button>
     </div>
@@ -145,7 +145,7 @@ html,body{overflow-x:clip}
         </div>
         <h3 id="online-title" data-pt="Ou deseja marcar sua consulta diretamente pela página?" data-es="¿O preferís reservar tu consulta directamente desde la página?">Ou deseja marcar sua consulta diretamente pela página?</h3>
         <p data-pt="Escolha o dia e um horário disponível, pague online e receba a confirmação da sua consulta." data-es="Elegí el día y un horario disponible, pagá online y recibí la confirmación de tu consulta.">Escolha o dia e um horário disponível, pague online e receba a confirmação da sua consulta.</p>
-        <a class="btn" id="online-booking" href="agendar.html?lang=pt"><span data-pt="Clique aqui · agendar online" data-es="Hacé clic acá · reservar online">Clique aqui · agendar online</span><span aria-hidden="true">→</span></a>
+        <a class="btn" id="online-booking" href="agendar.html?lang=es"><span data-pt="Clique aqui · agendar online" data-es="Hacé clic acá · reservar online">Clique aqui · agendar online</span><span aria-hidden="true">→</span></a>
         <p class="booking-note" data-pt="Consulta online pelo Google Meet. O link aparece após a confirmação." data-es="Consulta online por Google Meet. El enlace aparece después de la confirmación.">Consulta online pelo Google Meet. O link aparece após a confirmação.</p>
       </article>
     </div>
@@ -500,7 +500,7 @@ html,body{overflow-x:clip}
 
 <div class="mobile-contact"><a href="#agendamento" data-pt="Agendar consulta ↓" data-es="Reservar turno ↓">Agendar consulta ↓</a></div><script>
 // ===================== IDIOMA =====================
-let currentLang = 'pt';
+let currentLang = 'es';
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
 menuToggle.addEventListener('click', function(){
@@ -702,4 +702,11 @@ function calcWellsTEP(){const ws=[3,3,1.5,1.5,1.5,1,1];const s=ws.reduce((a,v,i)
 function calcAlvarado(){const weights=[1,1,1,2,1,1,2,1];const s=weights.reduce((a,v,i)=>a+(document.getElementById('a'+(i+1)).checked?v:0),0);result('alv-res','<strong>Alvarado: '+s+' / 10</strong><br>'+lang('Interpretar junto ao exame clínico e investigação. Pontuação baixa não exclui apendicite.','Interpretar con el examen clínico y la investigación. Puntaje bajo no excluye apendicitis.'))}
 </script><script>
 document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'es-AR';
-</script><script src="assets/home-booking.js?v=15"></script></body></html>
+// Idioma inicial: español; el botón permite cambiar a portugués.
+document.getElementById('langBtn').textContent = 'PT';
+document.querySelectorAll('[data-pt]').forEach(el => {
+  if (el.tagName !== 'OPTION') el.textContent = el.getAttribute('data-es');
+});
+document.querySelectorAll('option[data-pt]').forEach(opt => { opt.textContent = opt.getAttribute('data-es'); });
+document.getElementById('agendamento').setAttribute('aria-label', 'Opciones de reserva');
+</script><script src="assets/home-booking.js?v=16"></script></body></html>
