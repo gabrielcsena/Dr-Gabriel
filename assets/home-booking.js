@@ -3,7 +3,7 @@
   const $ = id => document.getElementById(id);
   const calendar = $('whatsapp-calendar');
   if (!calendar) return;
-  const phone = '5511994269621';
+  const phone = '5493756528947';
   const zone = 'America/Argentina/Buenos_Aires';
   let month = '';
   const language = () => document.documentElement.lang.startsWith('es') ? 'es' : 'pt';
