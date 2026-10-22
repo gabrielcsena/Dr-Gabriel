@@ -1,6 +1,21 @@
 'use strict';
 (() => {
   const $ = id => document.getElementById(id);
+  // O botão de preços deve funcionar independentemente do calendário de WhatsApp.
+  const pricesToggle = $('prices-toggle');
+  if (pricesToggle) {
+    pricesToggle.addEventListener('click', () => {
+      const panel = $('consultation-prices');
+      if (!panel) return;
+      panel.hidden = !panel.hidden;
+      pricesToggle.setAttribute('aria-expanded', String(!panel.hidden));
+      const label = pricesToggle.querySelector('[data-pt]');
+      if (label) {
+        const isPt = document.documentElement.lang.startsWith('es') ? false : true;
+        label.textContent = !panel.hidden ? (isPt ? 'Ocultar preços' : 'Ocultar precios') : (isPt ? 'Ver preços' : 'Ver precios');
+      }
+    });
+  }
   const calendar = $('whatsapp-calendar');
   if (!calendar) return;
   const phone = '5493756528947';
@@ -97,17 +112,4 @@
   window.addEventListener('resize', headerHeight);
   headerHeight();
   render();
-  const pricesToggle = $('prices-toggle');
-  if (pricesToggle) {
-    pricesToggle.addEventListener('click', () => {
-      const panel = $('consultation-prices');
-      panel.hidden = !panel.hidden;
-      pricesToggle.setAttribute('aria-expanded', String(!panel.hidden));
-      const label = pricesToggle.querySelector('[data-pt]');
-      if (label) {
-        const isPt = language() === 'pt';
-        label.textContent = !panel.hidden ? (isPt ? 'Ocultar preços' : 'Ocultar precios') : (isPt ? 'Ver preços' : 'Ver precios');
-      }
-    });
-  }
 })();
